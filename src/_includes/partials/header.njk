@@ -1,6 +1,6 @@
 {% from "partials/icon.njk" import icon %}
 
-<header class="site-head"{% if site.cover_image %} style="background-image: url('{{ site.cover_image }}')"{% endif %}>
+<header class="site-head"{% if site.cover_image %}{% endif %}>
     <div class="container">
         <div class="site-mast">
             {% if site.logo %}
@@ -21,15 +21,15 @@
                         {{ icon({ id: 'facebook' }) }}
                     </a>
                 {% endif %}
-                <a class="site-nav-item" href="https://feedly.com/i/subscription/feed/{{ site.url }}/rss/" target="_blank" rel="noopener noreferrer">
+                <a class="site-nav-item neuicon alt" href="https://feedly.com/i/subscription/feed/{{ site.url }}/rss/" target="_blank" rel="noopener noreferrer">
                     {{ icon({ id: 'rss' }) }}
                 </a>
             </div>
         </div>
         {% if page.url == '/' %}
-            <div class="site-banner">
-                <h1 class="site-banner-title">{{ site.title }}</h1>
-                <p class="site-banner-desc">{{ site.description }}</p>
+            <div class="site-banner bg-dark">
+                <h1 class="site-banner-title bg-dark">{{ site.title }}</h1>
+                <p class="site-banner-desc bg-dark">{{ site.description }}</p>
             </div>
         {% endif %}
 

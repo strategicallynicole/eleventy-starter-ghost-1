@@ -44,8 +44,9 @@
             <meta property="og:locale" content="{{ site.lang }}">
             <meta property="article:author" content="{{ site.url }}">
         {%- endblock -%}
+        <script src="https://kit.fontawesome.com/dd47f1ac1c.js" crossorigin="anonymous"></script>
 
-        {% set css %}{% include "css/styles.css" %}{% endset %}
+        {% set css %}{% include "css/main.css" %}{% include "css/styles.css" %}{% endset %}
         <style>{{ css | cssmin | safe }}</style>
 
         <script>document.documentElement.classList.remove('no-js');</script>
@@ -53,7 +54,7 @@
         {{ site.codeinjection_head | safe if site.codeinjection_head }}
         {{ codeinjection_head | safe if codeinjection_head }}
     </head>
-    <body>
+    <body class="bg-dark">
         {% include "partials/icons.njk" %}
         <div class="viewport">
 
@@ -67,7 +68,6 @@
                     </div>
                 </main>
             </div>
-
             <div class="viewport-bottom">
                 {% include "partials/footer.njk" %}
             </div>

@@ -8,7 +8,11 @@
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
     "test": "yarn run build",
-    "lint": "eslint . --ext .js --cache"
+    "lint": "eslint . --ext .js --cache",
+    "scss": "sass src/assets/_scss/main.scss src/_includes/css/main.css",
+    "smoke": "npm run scss & yarn run dev",
+    "fresh": "sass src/assets/_scss/main.scss src/_includes/css/main.css --watch",
+    "dome": "npm run fresh & npm run smoke"
   },
   "repository": {
     "type": "git",
@@ -40,10 +44,14 @@
     "eleventy-plugin-lazyimages": "liamfiddler/eleventy-plugin-lazyimages",
     "eleventy-plugin-local-images": "^0.4.0",
     "eslint-utils": "2.0.0",
-    "html-minifier": "^4.0.0"
+    "fs-extra": "^9.0.1",
+    "html-minifier": "^4.0.0",
+    "path": "^0.12.7",
+    "sass": "^1.26.8"
   },
   "devDependencies": {
     "eslint": "6.8.0",
-    "eslint-plugin-ghost": "1.5.0"
+    "eslint-plugin-ghost": "1.5.0",
+    "moment-timezone": "^0.5.31"
   }
 }

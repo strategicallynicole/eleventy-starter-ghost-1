@@ -7,6 +7,43 @@ const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 
+const sass = require('./config/sass-process.js');
+
+
+var moment = require('moment-timezone');
+
+module.exports = (function(eleventyConfig) {
+
+    eleventyConfig.addPassthroughCopy("src/js");
+    eleventyConfig.addPassthroughCopy("src/css");
+
+    eleventyConfig.addFilter("decorate", function(text) {
+        return "***"+text+"***";
+    });
+
+    eleventyConfig.addFilter("dateformat", function(dateIn) {
+        return moment(dateIn).tz('GMT').format('YYYY MMMM DD, dddd, HH:MM:SS z');
+    });
+
+    return {
+
+        dir: {
+            output: "dist",
+            input: "src",
+            data: "jsondata",
+            includes: "partials_layouts"
+        },
+
+        templateFormats: ["njk", "md"]
+    };
+
+});
+
+module.exports = config => {
+    //Watching for modificaions in style directory
+    sass('./assets/_scss/main.scss', './assets/styles/main.css');
+}
+
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 
 // Init Ghost API
@@ -29,9 +66,7 @@ module.exports = function(config) {
   config.addPlugin(pluginRSS);
 
   // Apply performance attributes to images
-  config.addPlugin(lazyImages, {
-    cacheFile: ""
-  });
+
 
   // Copy images over from Ghost
   config.addPlugin(localImages, {
