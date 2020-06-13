@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: $light-text-on-dark-bg;
-    font-family: 'Raleway';
+    font-family: 'Josefin Sans';
     font-weight: 100;
     }
     strong {
@@ -20,6 +20,19 @@
     h1, h2, h3, h4, h5, h6
     {
         font-weight: 100;
-        text-transform: uppercase;
-        font-family: 'Roboto Slab';
+        text-transform: normal;
+        font-family: 'Raleway';
+    }
+
+    .text-center {
+        text-align: center;
+
+    }
+
+    p.fancy {
+        padding: 20px;
+    }
+
+    .no-underline {
+        text-decoration: none !important;
     }

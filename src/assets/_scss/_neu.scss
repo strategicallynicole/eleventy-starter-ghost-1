@@ -141,22 +141,22 @@ box-shadow: inset 5px 5px 22px #0D0E0F, inset -3px -3px 22px #40464E;
 
 
 
-  .neuicon-holder-small {
+  .neuiconold-holder-small {
     width: 35px;
     height: 35px;
   }
 
-  .neuicon-holder-medium {
+  .neuiconold-holder-medium {
     width: 50px;
     height: 50px;
   }
 
-  .neuicon-holder-large {
+  .neuiconold-holder-large {
     width: 75px;
     height: 75px;
   }
 
-    .neuicon {
+    .neuiconold {
       text-align: center;
       opacity: 1;
       position: relative;
@@ -171,7 +171,7 @@ box-shadow: inset 5px 5px 22px #0D0E0F, inset -3px -3px 22px #40464E;
     }
 
 
-    .neuicon::after {
+    .neuiconold::after {
       content: "";
       border-radius: 20px;
       position: absolute;
@@ -186,7 +186,7 @@ box-shadow: inset 5px 5px 22px #0D0E0F, inset -3px -3px 22px #40464E;
 
       @include transition;
     }
-    .neuicon.alt::after {
+    .neuiconold.alt::after {
       content: "";
       border-radius: 20px;
 
@@ -203,7 +203,26 @@ box-shadow: inset 5px 5px 22px #0D0E0F, inset -3px -3px 22px #40464E;
       background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
     }
 
-    .neuicon.altalt::after {
+    .neubutton.altyborder {
+      padding-left: 30px;
+      border-radius: 50em;
+      padding-right: 60px;
+      border: 1px solid $purple;
+      background: linear-gradient(165.64deg, #26272B 9.53%, #34393F 95.92%);
+      box-shadow: 10px 10px 40px #0D0E0F, -10px -10px 40px #40464E;
+      border-radius: 40px;
+      width:   fit-content;
+      color: #fff !important;
+      margin: 10px;
+      padding-left: 20px;
+      display: inline-block;
+      padding-right: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      @include transition;
+      font-size: 20px;
+    }
+    .oldneuiconold.altalt::after {
       content: "";
       border-radius: 20px;
       position: absolute;
@@ -219,15 +238,15 @@ box-shadow: inset 5px 5px 22px #0D0E0F, inset -3px -3px 22px #40464E;
       box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px $chosenone;
 
     }
-    .neuicon:hover::after {
+    .neuiconold:hover::after {
       opacity: 1;
   }
-    .neuicon:hover {
+    .neuiconold:hover {
       -webkit-transform: scale(1, 1);
       transform: scale(1, 1);
     }
 
-    .neuicon:hover::after {
+    .neuiconold:hover::after {
         opacity: 1;
     }
 

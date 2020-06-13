@@ -40,7 +40,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
   margin: 0 0 5px 0;
-  font-size: 1.4rem;
+  font-size: 12px;
   line-height: 1.15em;
   color: white;
 
@@ -142,6 +142,103 @@ padding: 28px;
     opacity: 1;
 }
 
+
+.fancy-box-tags-container {
+  color: #fff;
+  font-size: 14px;
+ 
+}
+
+.fancy-box-tags-container i {
+  color: #fff;
+  font-size: 14px;
+ 
+}
+.fancy-box-tags-container a {
+  float: right;
+  color: #fff;
+  font-size: 5px;
+  float: right;
+
+
+
+}
+
+
+.fad.fa-tags:after {
+  padding-right: 10px;
+
+}
+
+.no-underline {
+  text-decoration: none;
+}
+.fancypostexcerpt {
+  margin-left: 40px;
+  margin-right: 20px;
+
+}
+.fancy-box-time-container i {
+  margin-right: 10px; 
+}
+
+.fancy-box-time-container {
+  float: left;
+
+  color: #fff;
+  font-size: 14px; 
+  padding-right: 15px;
+}
+.fancybody {
+}
+.smallerbtn {
+line-height: .5pt;
+font-size: 16px;
+}
+.fancy-box-footer {
+
+}
+
+.fancy-box-header {
+margin-left: 40px;
+margin-top: 30px;
+margin-right: 20px;
+
+}
+
+
+
+.accordion-title-bordered .accordion-title a {
+color: #ffffff;
+}
+
+.accordion-title-bordered .accordion-title .active a {
+color: #6c5ba7;
+}
+
+
+.neucardcontainer {
+background: linear-gradient(124.09deg, #26272B 12.58%, #34393F 93.19%) !important;
+mix-blend-mode: normal;
+box-shadow: 4px 3px 19px #0D0E0F, -5px -5px 20px #40464E !important;
+border-radius: 40px;
+width: 100%;
+min-height: 30vh;
+}
+
+.neucardimage {
+position: absolute;
+left: 0%;
+top: 0%;
+width: 100%;
+height: 200px;  
+object-fit: cover;
+z-index: 99;
+position: relative;
+/* Primary / Primary 3 */
+background: #6C5DA7;
+border-radius: 40px 40px 0px 0px;
+}
 
 
 
