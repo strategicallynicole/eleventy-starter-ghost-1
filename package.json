@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-starter-ghost",
+  "name": "suckittrebeck",
   "version": "1.0.0",
-  "description": "A starter template to build websites with Ghost & Eleventy",
+  "description": "A starter to build websites with Ghost & Eleventy",
   "main": ".eleventy.js",
   "scripts": {
     "start": "yarn run dev",
@@ -14,10 +14,6 @@
     "fresh": "sass ./src/assets/_scss --watch",
     "dome": "npm run fresh & npm run smoke"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TryGhost/eleventy-starter-ghost.git"
-  },
   "keywords": [
     "eleventy",
     "ghost",
@@ -29,10 +25,7 @@
   ],
   "author": "David Darnes",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TryGhost/eleventy-starter-ghost/issues"
-  },
-  "homepage": "https://github.com/TryGhost/eleventy-starter-ghost#readme",
+  
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-img": "^0.2.5",
