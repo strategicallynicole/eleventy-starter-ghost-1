@@ -11,7 +11,7 @@
         <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
         <meta name="robots" content="index,follow">
         <meta name="generator" content="Eleventy">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {% if site.icon %}
             <link rel="shortcut icon" type="image/png" href="{{ site.icon }}"/>
@@ -45,35 +45,28 @@
             <meta property="article:author" content="{{ site.url }}">
         {%- endblock -%}
 
-        {% set css %}{% include "css/styles.css" %}{% endset %}
+        {% set css %}{% include "css/styles.css" %}
+       {% include "css/main.css" %}
+       {% include "css/plugins.css" %}
+       {% include "css/bootstrap.min.css" %}{% endset %}
+
         <style>{{ css | cssmin | safe }}</style>
 
         <script>document.documentElement.classList.remove('no-js');</script>
+       {% include "../vendors/fontawesome.html" %}
 
         {{ site.codeinjection_head | safe if site.codeinjection_head }}
         {{ codeinjection_head | safe if codeinjection_head }}
     </head>
     <body>
-        {% include "partials/icons.njk" %}
-        <div class="viewport">
 
-            <div class="viewport-top">
-                {% include "partials/header.njk" %}
 
-                <main class="site-main">
-                    <div class="container">
+
                         {% block content %}
-                        {% endblock content %}
-                    </div>
-                </main>
-            </div>
-
-            <div class="viewport-bottom">
+                        {% endblock %}
                 {% include "partials/footer.njk" %}
-            </div>
 
             {{ site.codeinjection_foot | safe if site.codeinjection_foot }}
             {{ codeinjection_foot | safe if codeinjection_foot }}
-        </div>
-    </body>
-</html>
+
+
