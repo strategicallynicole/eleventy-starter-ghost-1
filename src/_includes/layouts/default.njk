@@ -44,6 +44,7 @@
             <meta property="og:locale" content="{{ site.lang }}">
             <meta property="article:author" content="{{ site.url }}">
         {%- endblock -%}
+        <script src="https://kit.fontawesome.com/dd47f1ac1c.js" crossorigin="anonymous"></script>
 
         {% set css %}{% include "css/styles.css" %}
        {% include "css/main.css" %}
@@ -58,12 +59,14 @@
         {{ site.codeinjection_head | safe if site.codeinjection_head }}
         {{ codeinjection_head | safe if codeinjection_head }}
     </head>
-    <body>
-
-
-
+                <main class="site-main">
+                    <div class="container">
                         {% block content %}
-                        {% endblock %}
+                        {% endblock content %}
+                    </div>
+                </main>
+            </div>
+            <div class="viewport-bottom">
                 {% include "partials/footer.njk" %}
 
             {{ site.codeinjection_foot | safe if site.codeinjection_foot }}
