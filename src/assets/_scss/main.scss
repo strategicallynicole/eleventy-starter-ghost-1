@@ -1,3 +1,43 @@
+@import 'bootstrap.min.css';
+$oswald: 'Josefin Sans';
+$libre: 'Josefin Sans';
+$black: #121212;
+//Variables
+$font-size-base             : 18px;
+$font-weight-base           : 300;
+$line-height-base           : 1.2;
+
+$ff-sans-serif              : 'Josefin Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$ff-serif                   : Georgia, "Times New Roman", Times, serif;
+
+$t-duration                 : 0.4s;
+
+$shell-max-width            : 1332px;
+$shell-gutter               : 15px;
+
+$c-black                    : #000;
+$c-white                    : #212121;
+$c-base                     : #055590;
+$red                        : #121212;
+$white                     : #212121;
+$responsive-ios             : 812px;
+
+$breakpoints: (
+	mobile-small: 374px,
+	mobile-medium: 575px,
+	mobile: 767px,
+	admin-bar: 782px,
+	tablet: 1023px,
+	small-desktop: 1199px,
+	large-desktop: 1399px
+);
+
+$ff-raleway: 'Josefin Sans', sans-serif;
+
+$c-gray: #E0E0E0;
+
+@import "_neu/style";
+
 
 $bg-gradient: 333.76deg, #26272B 22.72%, #34393F 89.31%;
 $light-text-on-dark-bg: #fff;
@@ -8,12 +48,6 @@ $bold: 300;
 $darkchosenone: darken(#6c5ba7, 10%);
 
 
-$white: #ffffff;
-
-.white {
-    color: $white;
-}
-
 @import "mixin";
 @import "nav";
 @import "base";
@@ -21,6 +55,9 @@ $white: #ffffff;
 @import "cards";
 @import "neucards";
 @import "icons";
+.white {
+    color: $white;
+}
 
 
-
+@import "_neu/style";

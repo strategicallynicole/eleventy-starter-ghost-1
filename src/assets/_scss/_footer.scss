@@ -125,7 +125,9 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    background: rgba(57, 68, 77, 0.64);
+    background: linear-gradient(142.92deg, #26272B 12.58%, #34393F 93.19%);   
+    box-shadow: 4px 3px 19px #0D0E0F, inset -5px -5px 20px #40464E;
+    border-radius: 20px;
 }
 
 .footer-wrapper .footer-tag .single-tag::after {

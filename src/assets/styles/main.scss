@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+
+@import "fresh";
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Josefin+Sans:wght@300&display=swap");
 @font-face {
   font-family: 'SignPainter';
@@ -85,10 +88,12 @@ html {
   height: 100%; }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   height: 100%;
-  background-color: #121212; }
+  background-image: linear-gradient(to top, #262b2f, #16191d);
+  background-attachment: fixed;
 
+}
 a:active, a:focus, input, select, textarea {
   outline: none !important; }
 
@@ -1522,7 +1527,7 @@ a:hover {
   z-index: -1; }
 
 .header-area .container-fluid {
-  max-width: 1650px;
+  max-width: 100%;
   background-color: #121212; }
 
 .header-area.sticky-menu {

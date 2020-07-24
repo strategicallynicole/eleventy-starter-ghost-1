@@ -1,6 +1,5 @@
 require("dotenv").config();
-const sass = require('./src/_config/scss.js');
-sass('./src/assets/styles/main.scss', './src/_includes/css/main.css');
+const sass = require('./_config/sass-process.js');
 const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
@@ -8,8 +7,7 @@ const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 const inputDir = "src";
-const htmlMinTransform = require("./src/transforms/html-min-transform.js");
-
+const htmlMinTransform = require("./_config/html-min-transform.js");
 // Init Ghost API
 const api = new ghostContentAPI({
   url: process.env.GHOST_API_URL,
@@ -22,36 +20,56 @@ const stripDomain = url => {
   return url.replace(process.env.GHOST_API_URL, "");
 };
 
+/*const excerpt = require('./src/_config/excerpt.js');
+*/
+/* module.exports = function(eleventyConfig) {
+ /* eleventyConfig.addJavaScriptFunction("excerpt", excerpt());
+/*};*/
+
+
 module.exports = function(config) {
   // Minify HTML
+ 
+  
+  sass('./src/assets/_scss/main.scss', './src/_includes/css/main.css');
+
 
   config.addTransform("htmlmin", htmlMinTransform);
-  config.addWatchTarget("./src/assets/_scss/");
-  config.addPassthroughCopy("src/js");
-  config.addPassthroughCopy("src/css");
-  // copy everything in `./src/_assets` to `./public/assets`
+  config.addWatchTarget("/src/assets/_scss/");
+  config.addPassthroughCopy("/src/js");
+  config.addPassthroughCopy("/src/assets/vendor");
+  config.addPassthroughCopy("/src/assets/js");
+  config.addPassthroughCopy("/src/assets/styles");
+  config.addPassthroughCopy("/src/assets/css/styles.css");
+
+  config.addPassthroughCopy("/src/assets/images");
+  config.addPassthroughCopy(`${inputDir}/assets/`, 'assets');
+
+  config.addPassthroughCopy("/src/css");
   config.addPassthroughCopy(`${inputDir}/assets`, 'assets');
   config.addTransform("htmlmin", htmlMinTransform);
   config.addPlugin(pluginRSS);
-  config.addPassthroughCopy("src/js");
-  config.addPassthroughCopy("src/css");
+  config.addPassthroughCopy("/src/js");
+  config.addPassthroughCopy("/src/css");
+  config.addPassthroughCopy("/src/_includes/css");
+
 
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
 
   // Apply performance attributes to images
-  config.addPlugin(lazyImages, {
+  /*config.addPlugin(lazyImages, {
     cacheFile: ""
-  });
+  });*/
 
   // Copy images over from Ghost
-  config.addPlugin(localImages, {
+ /* config.addPlugin(localImages, {
     distPath: "dist",
     assetPath: "/assets/images",
     selector: "img",
     attribute: "data-src", // Lazy images attribute
     verbose: false
-  });
+  });*/
 
   // Inline CSS
   config.addFilter("cssmin", code => {
@@ -210,13 +228,17 @@ module.exports = function(config) {
   return {
     dir: {
       input: "src",
-      output: "dist"
+      output: "dist",
+      includes: "_includes",
+      layouts: "_layouts",
+      data: "_data"
     },
 
     // Files read by Eleventy, add as needed
-    templateFormats: ["css", "njk", "md", "txt", "pug"],
+    templateFormats: ["css", "njk", "md", "txt", "pug", "scss"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   };
 };
+

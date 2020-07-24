@@ -5,33 +5,18 @@ pagination:
   alias: posts
 ---
 
-{% extends 'layouts/default.njk' %}
+{% extends './_layouts/default.njk' %}
 {% from "partials/card.njk" import card %}
 
 {% set title = "Posts" %}
-
 {% block content %}
-    {% include "partials/featured-slider-area.liquid" %}
+
+    {% include "partials/featured-slider-area.njk" %}
 
     {% include "partials/latestnews.njk" %}
 
-    <!-- ================== /All News Area ======================= -->
-
-
-    <section>
-               <div class="container-fluid">
-            <div class="row">
-        {% for post in posts.slice(3,10) %}
-   
-                <div class="col-sm-12 col-lg-6">
-            {{ card(post) }}
-</div>
-        {% endfor %}
-        </div></div>
-    </section>
-
-    {% include "partials/pagination.njk" %}
-{% endblock%}
+  
+{% endblock content %}
 
 
 

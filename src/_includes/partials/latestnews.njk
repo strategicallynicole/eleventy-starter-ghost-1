@@ -1,9 +1,7 @@
 {% from "partials/card.njk" import card %}
-    <!-- ================== /All News Area ======================= -->
 
 
      
-    <!-- ================== /Latest News Area ======================= -->
     <div class="latest-news-sec">
         <div class="container">
             <div class="section-title text-right mb-4">
@@ -13,7 +11,7 @@
                 <div class="">
                     <div class="owl-carousel ln-carousel">
 
-                         {% for post in posts.slice(3,10) %}
+                         {% for post in posts.slice(3,7) %}
    <div class="ln-card">
             {{ card(post) }}
 </div>
