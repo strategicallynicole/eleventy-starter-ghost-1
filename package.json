@@ -30,6 +30,7 @@
     "@11ty/eleventy-img": "^0.2.5",
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@tryghost/content-api": "^1.2.5",
     "@tryghost/helpers": "^1.1.6",
     "clean-css": "^4.2.1",
@@ -39,16 +40,16 @@
     "eleventy-plugin-excerpt": "^1.1.2",
     "eleventy-plugin-lazyimages": "liamfiddler/eleventy-plugin-lazyimages",
     "eleventy-plugin-local-images": "^0.4.0",
-    "eslint-utils": "2.1.0",
+    "eslint-utils": "^2.1.0",
     "fs-extra": "^9.0.1",
     "html-minifier": "^4.0.0",
     "liquid": "^4.0.1",
-    "liquidjs": "^9.14.0",
+    "liquidjs": "^9.14.1",
     "path": "^0.12.7",
-    "sass": "^1.26.9"
+    "sass": "^1.26.10"
   },
   "devDependencies": {
-    "eslint": "6.8.0",
-    "eslint-plugin-ghost": "1.5.0"
+    "eslint": "^6.8.0",
+    "eslint-plugin-ghost": "^1.5.0"
   }
 }

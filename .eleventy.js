@@ -7,6 +7,8 @@ const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 const inputDir = "src";
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 const htmlMinTransform = require("./_config/html-min-transform.js");
 // Init Ghost API
 const api = new ghostContentAPI({
@@ -20,32 +22,57 @@ const stripDomain = url => {
   return url.replace(process.env.GHOST_API_URL, "");
 };
 
-/*const excerpt = require('./src/_config/excerpt.js');
-*/
-/* module.exports = function(eleventyConfig) {
- /* eleventyConfig.addJavaScriptFunction("excerpt", excerpt());
-/*};*/
+/*const excerpt = require('./src/_config/excerpt.js');*/
+
+// module.exports = function(eleventyConfig) {
+//  eleventyConfig.addJavaScriptFunction("excerpt", excerpt());
+// };
 
 
 module.exports = function(config) {
-  // Minify HTML
- 
+  sass('./src/assets/_scss/main.scss', './src/assets/css/main.css');
+
+  config.addPlugin(syntaxHighlight);
+  config.addWatchTarget("./src/assets/_scss/");
+
+  // minify the html output
+  config.addTransform("htmlmin", require("./_config/utils/htmlmin.js"));
+
+  // compress and combine js files
+  config.addFilter("jsmin", function(code) {
+    const UglifyJS = require("uglify-js");
+    let minified = UglifyJS.minify(code);
+      if( minified.error ) {
+          console.log("UglifyJS error: ", minified.error);
+          return code;
+      }
+      return minified.code;
+  });
+
   
-  sass('./src/assets/_scss/main.scss', './src/_includes/css/main.css');
+  // Minify HTML
+  let env = process.env.ELEVENTY_ENV;
+
+  // Layout aliases can make templates more portable
+  config.addLayoutAlias('default', 'layouts/base.njk');
+
+  // Add some utility filters
+  config.addFilter("squash", require("./_config/filters/squash.js"));
+  config.addFilter("dateDisplay", require("./_config/filters/date.js") );
+  
 
 
   config.addTransform("htmlmin", htmlMinTransform);
-  config.addWatchTarget("/src/assets/_scss/");
   config.addPassthroughCopy("/src/js");
   config.addPassthroughCopy("/src/assets/vendor");
   config.addPassthroughCopy("/src/assets/js");
   config.addPassthroughCopy("/src/assets/styles");
-  config.addPassthroughCopy("/src/assets/css/styles.css");
+  config.addPassthroughCopy("./src/assets/css/neumorphism.css");
 
   config.addPassthroughCopy("/src/assets/images");
   config.addPassthroughCopy(`${inputDir}/assets/`, 'assets');
 
-  config.addPassthroughCopy("/src/css");
+  config.addPassthroughCopy("./src/assets/css");
   config.addPassthroughCopy(`${inputDir}/assets`, 'assets');
   config.addTransform("htmlmin", htmlMinTransform);
   config.addPlugin(pluginRSS);
@@ -53,6 +80,29 @@ module.exports = function(config) {
   config.addPassthroughCopy("/src/css");
   config.addPassthroughCopy("/src/_includes/css");
 
+
+
+
+  // add support for syntax highlighting
+  config.addPlugin(syntaxHighlight);
+
+  // minify the html output
+  config.addTransform("htmlmin", require("./_config/utils/minify-html.js"));
+
+  // compress and combine js files
+  config.addFilter("jsmin", function(code) {
+    const UglifyJS = require("uglify-js");
+    let minified = UglifyJS.minify(code);
+      if( minified.error ) {
+          console.log("UglifyJS error: ", minified.error);
+          return code;
+      }
+      return minified.code;
+  });
+
+
+  // pass some assets right through
+  config.addPassthroughCopy("./src/site/images");
 
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
@@ -225,6 +275,7 @@ module.exports = function(config) {
   });
 
   // Eleventy configuration
+  env = (env=="seed") ? "prod" : env;
   return {
     dir: {
       input: "src",
@@ -235,10 +286,14 @@ module.exports = function(config) {
     },
 
     // Files read by Eleventy, add as needed
-    templateFormats: ["css", "njk", "md", "txt", "pug", "scss"],
+    templateFormats: ["njk", "md", "txt", "pug", "html"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true,
   };
 };
+
+
+
+
 
