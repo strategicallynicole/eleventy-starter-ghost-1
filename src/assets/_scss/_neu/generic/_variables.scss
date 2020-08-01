@@ -3,17 +3,17 @@ $font-size-base             : 18px;
 $font-weight-base           : 300;
 $line-height-base           : 1.2;
 
-$ff-sans-serif              : Josefin Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$ff-serif                   : Georgia, "Times New Roman", Times, serif;
+$ff-sans-serif              : 'Josefin Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$ff-serif                   : 'Josefin Sans', "Times New Roman", Times, serif;
 
 $t-duration                 : 0.4s;
 
 $shell-max-width            : 1332px;
-$shell-gutter               : 15px;
+$shell-gutter               : 35px;
 
 $c-black                    : #000;
 $c-white                    : #fff;
-$c-base                     : #055590;
+$c-base                     : #6c5ba7;
 
 $responsive-ios             : 812px;
 
@@ -27,6 +27,6 @@ $breakpoints: (
 	large-desktop: 1399px
 );
 
-$ff-raleway: Raleway, sans-serif;
+$ff-raleway: 'Josefin Sans', sans-serif;
 
 $c-gray: #E0E0E0;

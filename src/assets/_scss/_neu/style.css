@@ -212,11 +212,11 @@ body {
 body {
   min-width: 320px;
   background: #fff;
-  font-family: Josefin Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.2;
-  color: #000;
+  color: #fff;
 }
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
   body {
@@ -253,7 +253,7 @@ h6 {
 .h2,
 h2 {
   font-size: 72px;
-  font-family: Raleway, sans-serif;
+  font-family: "Raleway";
   font-weight: 800;
 }
 @media (max-width: 1199px) {
@@ -275,10 +275,25 @@ h2 {
   }
 }
 
+.h3,
+h3 {
+  font-weight: 600;
+}
+
 .h4,
 h4 {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 600;
+}
+
+.h5,
+h5 {
+  font-weight: 500;
+}
+
+.h6,
+h6 {
+  font-weight: 400;
 }
 
 p,
@@ -474,7 +489,7 @@ blockquote:last-child {
 .accordion .accordion__head h4 {
   padding-left: 14px;
   margin-bottom: 0;
-  font-family: Raleway, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   line-height: 1.17;
   transition: color 0.3s;
 }
@@ -1235,6 +1250,12 @@ blockquote:last-child {
 /* ------------------------------------------------------------ *\
 	Footer
 \* ------------------------------------------------------------ */
+.footer-wrapper .footer-social-section-wrapper {
+  padding: 50px 0 30px;
+  text-align: center;
+  background: linear-gradient(327.06deg, #26272B 23.47%, #34393F 90.06%) fixed;
+}
+
 /* ------------------------------------------------------------ *\
 	Grid
 \* ------------------------------------------------------------ */
@@ -1318,13 +1339,14 @@ blockquote:last-child {
 	Logo
 \* ------------------------------------------------------------ */
 .logo {
-  margin: 0 -10px;
-  display: block;
+  /*margin: 0 -10px;*/
+  margin-right: 4px;
 }
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
   .logo {
-    margin: 0;
-    max-width: 87px;
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: -15px;
   }
 }
 
@@ -1335,14 +1357,15 @@ blockquote:last-child {
 	Nav
 \* ------------------------------------------------------------ */
 .nav {
-  padding: 52px 0 20px;
+  padding: 24px 0 20px;
   color: #fff;
   display: none;
 }
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
   .nav {
     width: calc(100% - 153px);
-    padding: 0 0 0 9px;
+    padding: 0 0 0 0px;
+    display: inline-block;
   }
 }
 .nav a {
@@ -1359,14 +1382,14 @@ blockquote:last-child {
 .nav .nav__icon {
   min-width: 60px;
   min-height: 60px;
-  margin-bottom: 12px;
+  margin-bottom: 19px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
   padding: 0 0 0 0;
-  margin: 0 0 0 -4px;
+  margin: 0 0 10px 0;
   color: #ffffff !important;
   background: linear-gradient(128.11deg, #26272B 6.67%, #34393F 97.78%);
   /* iconstyle */
@@ -1380,16 +1403,21 @@ blockquote:last-child {
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
   .nav .nav__icon {
     margin-bottom: 0;
+    margin-left: 20px;
   }
 }
 .nav .nav__icon-inner {
-  min-height: 56px;
-  min-width: 56px;
+  min-height: 58px;
+  min-width: 58px;
+  border-radius: 15px;
+  padding: 0 0 0 0;
+  margin: 0 0 10px 0;
+  border-radius: 9px;
   color: #ffffff !important;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border-radius: 9px;
+  justify-content: center;
   transition: background 0.3s, box-shadow 0.3s;
 }
 .nav li + li {
@@ -1401,7 +1429,10 @@ blockquote:last-child {
   }
 }
 .nav li.active .nav__icon {
+  min-width: 60px;
+  min-height: 60px;
   display: flex;
+  border: 3px solid #6c5ba7;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
@@ -1424,8 +1455,15 @@ blockquote:last-child {
 
 .nav li {
   color: #ffffff !important;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
+  margin: 15px 0px 15px 0px;
+  padding: 5px 0px 5px 0px;
+}
+@media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+  .nav li {
+    color: #ffffff !important;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
 }
 
 .nav li a {
@@ -1446,21 +1484,18 @@ a.text-white:hover {
 .nav-trigger {
   min-width: 60px;
   min-height: 58px;
-  margin-bottom: 0px;
+  margin-bottom: 11px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  background: linear-gradient(128.11deg, #26272B 6.67%, #34393F 97.78%);
-  /* iconstyle */
-  box-shadow: 1px 1px 5px #0D0E0F, -3px -3px 9px #353B42, inset 1px 1px 9px #2D2E35;
   transition: background 0.3s, box-shadow 0.3s, border 0.3s;
 }
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
   .nav-trigger {
-    margin: 0;
+    display: none;
   }
 }
 .nav-trigger .nav-trigger__icon {
@@ -1471,7 +1506,10 @@ a.text-white:hover {
   justify-content: center;
   align-items: center;
   border-radius: 9px;
-  transition: background 0.3s, box-shadow 0.3s;
+  background: linear-gradient(128.11deg, #26272B 6.67%, #34393F 97.78%);
+  /* iconstyle */
+  box-shadow: 1px 1px 5px #0D0E0F, -3px -3px 9px #353B42, inset 1px 1px 9px #2D2E35;
+  transition: all ease-in-out 3s;
 }
 .nav-trigger:hover {
   border-color: transparent;
@@ -1500,12 +1538,10 @@ a.text-white:hover {
 	Panel
 \* ------------------------------------------------------------ */
 .panel {
-  max-width: 200px;
+  max-width: 100%;
   width: 100%;
   padding: 25px 11px 50px;
   border-radius: 16px;
-  background: linear-gradient(93.84deg, #2F3439 -72.68%, #26292E 26.94%, #17191C 185.78%);
-  box-shadow: 22px 22px 60px rgba(0, 0, 0, 0.5), -5px -6px 16px rgba(195, 200, 205, 0.04);
 }
 .panel .panel__head {
   text-align: center;
@@ -1513,13 +1549,9 @@ a.text-white:hover {
 .panel .panel__title {
   display: flex;
   align-items: center;
-  font-size: 21px;
-  font-family: Raleway, sans-serif;
-  font-weight: 400;
-  color: #6D737A;
+  color: #fff;
   text-align: center;
   line-height: 1;
-  text-shadow: -1px 6px 11px rgba(16, 18, 20, 0.1);
 }
 .panel .panel__body {
   padding-top: 27px;
@@ -1528,12 +1560,17 @@ a.text-white:hover {
   text-align: center;
 }
 
+.panel-body {
+  padding: 25px;
+  margin-left: 15px;
+}
+
 /* ------------------------------------------------------------ *\
 	PP Section
 \* ------------------------------------------------------------ */
 @media (max-height: 850px) {
   .pp-section .pp-tableCell {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -1769,7 +1806,7 @@ a.text-white:hover {
   left: -100%;
   right: -100%;
   z-index: -1;
-  background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%);
+  /*background: linear-gradient(173.26deg, #212121 -0.68%, #121212 74.03%);*/
 }
 @media (max-width: 1023px) {
   .section:after {
@@ -1782,7 +1819,7 @@ a.text-white:hover {
   }
 }
 .section .section__inner {
-  padding-top: 130px;
+  /* padding-top: 130px;*/
   padding-left: 69px;
   display: flex;
   justify-content: space-between;
@@ -2117,9 +2154,9 @@ a.text-white:hover {
   Shell
 \* ------------------------------------------------------------ */
 .shell {
-  max-width: calc( 1332px + 15px * 2 );
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: calc( 1332px + 35px * 2 );
+  padding-left: 35px;
+  padding-right: 35px;
   margin: auto;
   width: 100%;
 }
@@ -2261,7 +2298,7 @@ a.text-white:hover {
 .tabs .tabs__head h4 {
   padding-left: 14px;
   margin-bottom: 0;
-  font-family: Raleway, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   line-height: 1.17;
   transition: color 0.3s;
 }
@@ -2336,7 +2373,7 @@ a.text-white:hover {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%);
+  /*background: linear-gradient(173.26deg, #212121 -0.68%, #121212 74.03%);*/
 }
 
 /* ------------------------------------------------------------ *\

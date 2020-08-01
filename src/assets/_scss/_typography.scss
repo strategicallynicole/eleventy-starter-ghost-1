@@ -1,9 +1,10 @@
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
     color: #fff;
     line-height: 1.5;
     margin-bottom: 15px;
-    font-family: "Playfair Display",serif;
+    margin-top: 15px;
+
+    font-family: "Raleway",sans-serif;
 }
 
 h1 {
@@ -35,7 +36,7 @@ p {
     color: #d4d3d3;
     line-height: 1.8;
     font-size: 16px;
-    font-family: "Muli",sans-serif;
+    font-family: "Josefin Sans",sans-serif;
 }
 
 a {
@@ -87,7 +88,7 @@ a:hover {
     display: block;
     text-transform: uppercase;
     position: relative;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 14px;
     color: #fff;
     margin: 2px 20px 2px 0;

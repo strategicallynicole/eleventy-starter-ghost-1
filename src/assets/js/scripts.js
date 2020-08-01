@@ -105,7 +105,7 @@ $(document).ready(function() {
     })
 
     /////////////////////////////// 4. Scroll to top ////////////////////////////
-    $('body').prepend(
+   /*  $('body').prepend(
         '<div class="go-top"><span id="top"><i class="fa fa-long-arrow-up"></i></span></div>'
     )
     $(window).scroll(function() {
@@ -117,7 +117,7 @@ $(document).ready(function() {
     })
     $('#top').click(function() {
         $('body, html').animate({ scrollTop: 0 }, 1100)
-    })
+    }) */
 
     ////////////////////////// 5. OWL Carousel Sliders ////////////////////////
 

@@ -74,19 +74,11 @@
 }
 
 .logo {
-    padding-right: 50px;
+   /* padding-right: 50px;*/
     position: relative;
 }
 
-.logo::before {
-    position: absolute;
-    left: -15px;
-    top: 0;
-    width: calc(100% + 15px);
-    height: 100%;
-    content: '';
-    background-color: #1a2024;
-}
+
 
 .logo * {
     z-index: 1;
@@ -212,7 +204,7 @@
 
 .main-menu .mainmenu-list ul li a {
     color: #fff;
-    font-family: Oswald,sans-serif;
+    font-family: Raleway,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
 }

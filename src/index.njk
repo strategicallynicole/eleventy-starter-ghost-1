@@ -1,22 +1,134 @@
 ---
 pagination:
   data: collections.posts
-  size: 100
+  size: 1
   alias: posts
+nofooter: true
+Home: true
 ---
 
 {% extends './_layouts/default.njk' %}
-{% from "partials/card.njk" import card %}
 
-{% set title = "Posts" %}
+{% set title = "OAKwave Marketing Strategy" %}
+
+
+{% block stylesandscripts %}
+	<link rel="stylesheet" href="/assets/vendor/jquery.pagepiling.css" type="text/css" media="all">
+{% endblock stylesandscripts %}
+
+
+   {% block footerscripts %}
+   <script type="text/javascript" src="/assets/vendor/jquery.pagepiling.js"></script>
+
+    {% endblock footerscripts %}
 {% block content %}
+<div class="slider js-slider">
+							<div class="slider__content">
+								<section class="section section--hero js-animation-container">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">Hi.<br>We need to talk.</h2><!-- /.section__title -->
 
-    {% include "partials/featured-slider-area.njk" %}
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">It's about your marketing and sales strategy again... It's been... underwhelming.</p>
 
-    {% include "partials/latestnews.njk" %}
+											<div class="section__actions js-actions">
+												<a href="#Section-2" class="btn-dark js-scroll-to">Your curiosity compels you.</a>
 
-  
-{% endblock content %}
+												<a href="about.html" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+											<img src="/assets/images/temp/image-1@2x.png" alt="" width="1192" class="cthulu">
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
+
+								<section class="section section--alt js-animation-container" id="Section-2">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">Why do you keep your feelings all bottled up?</h2><!-- /.section__title -->
+
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">You just want a solution that doesn’t give you more headaches than it gives you in actual acquisitions and makes more money for you than it costs.</p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-3" class="btn-dark js-scroll-to">Your curiosity compels you.</a>
+
+												<a href="about.html" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+											<img src="/assets/images/temp/image-2@2x.png" alt="" width="626" height="734">
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
+
+								<section class="section section--offsets js-animation-container" id="Section-3">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">We help businesses quit duckin’ around </h2><!-- /.section__title -->
+
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">Your revenue is the only KPI that matters. Everything else is just bullshit noise.  We believe in breathing new life, fresh perspectives, and genuine solutions into broken marketing and sales.</p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-4" class="btn-dark js-scroll-to">Your curiosity compels you.</a>
+
+												<a href="about.html" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+											<img src="/assets/images/temp/image-3@2x.png" alt="" class="ducky" width="708" height="794">
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
+
+								<section class="section section--gutters js-animation-container" id="Section-4">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">You’ve been looking for us for a long time.</h2><!-- /.section__title -->
+
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">We're marketers, strategists, workhorses, consultants, and most likely the last folks standing in a zombie apocalypse..  </p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-5" class="btn-dark js-scroll-to">Schedule a call.</a>
+
+												<a href="about.html" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+											<img src="/assets/images/temp/image-4@2x.png" alt="" width="679" height="828">
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
 
 
+								<section class="section section--different js-animation-container" id="Section-5">
+									<div class="section__outer">
+										<div class="section__head">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">We’re good at what everyone says just says they’re good at.</h2><!-- /.section__title -->
+										</div><!-- /.section__head -->
 
+										<div class="section__body">
+											<div class="section__aside">
+												<img src="/assets/images/temp/image-5@2x.png" alt="" width="531" height="646">
+											</div><!-- /.section__aside -->
+
+											<div class="section__content">
+												<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">Hands down, we are the most resourceful, creative, problem-solving marketing geniuses you will ever find. We’re really, really good at campaign concepts, branding, content, and strategy... and really, really bad at corporate frills, small talk, and sending Christmas cards.</p>
+
+												<div class="section__actions js-actions">
+													<a href="about.html" class="btn-dark">Your curiosity compels you.</a>
+
+													<a href="#" class="btn-dark">Skip the overview.</a>
+												</div><!-- /.section__actions -->
+											</div><!-- /.section__content -->
+										</div><!-- /.section__body -->
+									</div><!-- /.section__outer -->
+								</section><!-- /.section section--hero -->
+							</div><!-- /.slider__content -->
+						</div>
+						
+{% endblock%}

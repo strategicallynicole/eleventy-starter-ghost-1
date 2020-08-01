@@ -1269,8 +1269,7 @@ blockquote:last-child {
 	Logo
 \* ------------------------------------------------------------ */
 .logo {
-  margin: 0 -10px;
-  display: block; }
+ }
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .logo {
       margin: 0;
@@ -1810,8 +1809,8 @@ blockquote:last-child {
     left: -100%;
     right: -100%;
     z-index: -1;
-    background: -o-linear-gradient(276.74deg, #262B2F -0.68%, #16191D 74.03%);
-    background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%); }
+    background: -o-linear-gradient(276.74deg, #212121 -0.68%, #121212 74.03%);
+    background: linear-gradient(173.26deg, #212121 -0.68%, #121212 74.03%); }
 @media (max-width: 1023px) {
       .section:after {
         display: none; } }
@@ -2197,8 +2196,8 @@ blockquote:last-child {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: -o-linear-gradient(276.74deg, #262B2F -0.68%, #16191D 74.03%);
-  background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%); }
+  background: -o-linear-gradient(276.74deg, #212121 -0.68%, #121212 74.03%);
+  background: linear-gradient(173.26deg, #212121 -0.68%, #121212 74.03%); }
 /* ------------------------------------------------------------ *\
 	Overwrites
 \* ------------------------------------------------------------ */

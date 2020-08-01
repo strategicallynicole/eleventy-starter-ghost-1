@@ -14,7 +14,7 @@ body {
 	font-weight: $font-weight-base;
 	font-size: $font-size-base;
 	line-height: $line-height-base;
-	color: #000;
+	color: #fff;
 
 	@include breakpoint-down(mobile) {
 		font-size: 16px;
@@ -56,7 +56,7 @@ h1 {}
 .h2,
 h2 {
 	font-size: 72px;
-	font-family: $ff-raleway;
+	font-family: 'Raleway';
 	font-weight: 800;
 
 	@include breakpoint-down(small-desktop) {
@@ -73,19 +73,26 @@ h2 {
 }
 
 .h3,
-h3 {}
+h3 {
+	font-weight: 600;
+
+}
 
 .h4,
 h4 {
 	font-size: 24px;
-	font-weight: 300;
+	font-weight: 600;
 }
 
 .h5,
-h5 {}
+h5 {
+	font-weight: 500;
+
+}
 
 .h6,
-h6 {}
+h6 {	font-weight: 400;
+}
 
 
 p,

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="{{ site.lang }}" class="no-js">
     <head>
         <title>
@@ -16,6 +16,7 @@
 
         
 
+            <link rel="alternate" type="application/rss+xml" title="OAKwave Blog" href="{{ site.url }}/feed.xml" />
 
 
         {% if site.icon %}
@@ -49,24 +50,22 @@
             <meta property="og:locale" content="{{ site.lang }}">
             <meta property="article:author" content="{{ site.url }}">
         {%- endblock -%}
-              {% set css %}
-       {% include "vendor/jquery-ui.min.css" %}
-       {% include "css/plugins.css" %}
-        {% include "css/bootstrap.min.css" %}
-               {% include "css/main.css" %}
+      	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" media="all" href="/assets/css/plugins.css" />
+              <link rel="stylesheet" type="text/css" media="all" href="/assets/css/styles.css" />
+              <link rel="stylesheet" type="text/css" media="all" href="/assets/css/main.css" />
 
-        {% include "css/styles.css" %}
-        {% endset %}
 
-        <style>{{ css }}</style>
-    {% block stylesandscripts %}
-    {% endblock stylesandscripts %}
         <script>document.documentElement.classList.remove('no-js');</script>
        {% include "vendors/fontawesome.njk" %}
 
         {{ site.codeinjection_head | safe if site.codeinjection_head }}
         {{ codeinjection_head | safe if codeinjection_head }}
+{% block stylesandscripts %}
+{% endblock stylesandscripts %}
     </head>
+
                 <main class="site-main">
                     <div class="container">
                                                 {% include "structure/bar.njk" %}
@@ -79,7 +78,9 @@
             <div class="viewport-bottom">
                 {% include "partials/footer.njk" %}</div>
 {% include "structure/footerscripts.njk" %}
-
+  {% block footerscripts %}
+    {% endblock footerscripts %}
+ 
             {{ site.codeinjection_foot | safe if site.codeinjection_foot }}
             {{ codeinjection_foot | safe if codeinjection_foot }}
 

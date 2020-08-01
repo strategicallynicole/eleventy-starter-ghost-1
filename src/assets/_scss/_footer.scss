@@ -1,12 +1,10 @@
 .footer-wrapper {
-    background: #121212;
     width: 100%;
 }
 
 .footer-wrapper .subscribe-section {
     padding: 50px 0;
-    background: #000;
-    display: flex;
+        display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -28,12 +26,11 @@
 }
 
 .footer-wrapper .subscribe-section.has-thumbimage:before {
-    background-color: rgba(26, 32, 36, 0.5);
+   /* background-color: rgba(26, 32, 36, 0.5); */
 }
 
 .footer-wrapper .subscribe-section.has-thumbimage .subscribe-form .form-group .form-control {
-    background-color: #fff;
-    color: #1a2024;
+    color: #fff;
 }
 
 .footer-wrapper .subscribe-section .subscribe-text {
@@ -42,14 +39,14 @@
 }
 
 .footer-wrapper .subscribe-section .subscribe-text h2 {
-    font-family: Oswald,sans-serif;
+    font-family: Raleway,sans-serif;
     font-weight: 700;
     font-size: 48px;
     letter-spacing: 0.96px;
 }
 
 .footer-wrapper .subscribe-section .subscribe-text p {
-    font-family: Muli,sans-serif;
+    font-family: 'Josefin Sans',sans-serif;
     font-weight: 400;
     font-size: 18px;
     color: #fff;
@@ -87,13 +84,13 @@
 }
 
 .footer-wrapper .subscribe-section .subscribe-form .form-group .form-control::placeholder {
-    font-family: Muli,sans-serif;
+    font-family: 'Josefin Sans',sans-serif;
     font-weight: 400;
     font-size: 16px;
 }
 
 .footer-wrapper .subscribe-section .subscribe-form .form-group button {
-    font-family: Oswald,sans-serif;
+    font-family: Raleway,sans-serif;
     font-weight: 400;
     font-size: 18px;
     letter-spacing: 0.36px;
@@ -125,11 +122,15 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    background: linear-gradient(142.92deg, #26272B 12.58%, #34393F 93.19%);   
-    box-shadow: 4px 3px 19px #0D0E0F, inset -5px -5px 20px #40464E;
-    border-radius: 20px;
+      border-radius: 20px;
+      
 }
-
+.footer-wrapper {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    background: linear-gradient(128.11deg, #26272B 6.67%, #34393F 97.78%) !important;   
+    box-shadow: -3px -3px 9px #353B42, 1px 1px 5px #0D0E0F, inset 1px 1px 9px #2D2E35 !important;
+}
 .footer-wrapper .footer-tag .single-tag::after {
     content: ' ';
     height: calc(100% - 20px);
@@ -155,7 +156,7 @@
 }
 
 .footer-wrapper .footer-tag .single-tag .tag-name h6 {
-    font-family: Oswald,sans-serif;
+    font-family: Raleway,sans-serif;
     font-weight: 400;
     font-size: 18px;
     transition: 0.3s;
@@ -228,7 +229,7 @@
 }
 
 .footer-wrapper .footer-social-section-wrapper .social-section h4 {
-    font-family: Oswald,sans-serif;
+    font-family: Raleway,sans-serif;
     font-weight: 400;
     font-size: 22px;
 }

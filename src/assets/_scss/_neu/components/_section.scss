@@ -14,7 +14,7 @@
 		left: -100%;
 		right: -100%;
 		z-index: -1;
-		background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%);
+		/*background: linear-gradient(173.26deg, #212121 -0.68%, #121212 74.03%);*/
 
 		@include breakpoint-down(tablet) {
 			display: none;
@@ -26,7 +26,7 @@
 	}
 
 	.section__inner {
-		padding-top: 130px;
+		/* padding-top: 130px;*/
 		padding-left: 69px;
 		display: flex;
 		justify-content: space-between;

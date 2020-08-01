@@ -162,9 +162,9 @@ html {
   height: 100%; }
 
 body {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   height: 100%;
-  background-image: linear-gradient(to top, #262b2f, #16191d);
+  background-image: linear-gradient(to top, #212121, #121212);
   background-attachment: fixed; }
 
 a:active, a:focus, input, select, textarea {
@@ -1758,7 +1758,7 @@ a:hover {
 
 .main-menu .mainmenu-list ul li a {
   color: #fff;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   letter-spacing: 1px; }
 
@@ -2132,7 +2132,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   padding: 0 15px; }
 
 .footer-wrapper .subscribe-section .subscribe-text h2 {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 700;
   font-size: 48px;
   letter-spacing: 0.96px; }
@@ -2176,7 +2176,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   font-size: 16px; }
 
 .footer-wrapper .subscribe-section .subscribe-form .form-group button {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0.36px;
@@ -2229,7 +2229,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   z-index: -1; }
 
 .footer-wrapper .footer-tag .single-tag .tag-name h6 {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 18px;
   transition: 0.3s;
@@ -2292,7 +2292,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   margin-bottom: 10px; }
 
 .footer-wrapper .footer-social-section-wrapper .social-section h4 {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 22px; }
 
@@ -2383,7 +2383,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
 .featured-slider.owl-carousel .owl-dots .owl-dot {
   color: #777;
   font-size: 20px;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   border-bottom: 1px solid #777;
   margin: 5px 0; }
@@ -2420,7 +2420,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   color: #fff;
   letter-spacing: 6.13px;
   font-size: 16px;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   z-index: 1; }
 
@@ -2443,7 +2443,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   margin-top: 40px; }
 
 .read-more a {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: #fff;
@@ -2535,7 +2535,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
 
 .section-title h1, .section-title h2, .section-title h3, .section-title h4, .section-title h5, .section-title h6 {
   color: #fff;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   letter-spacing: 1.04px;
   text-transform: uppercase;
@@ -2798,7 +2798,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   position: relative; }
 
 .author-banner .author-banner-text h2 {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 50px;
   text-align: center;
@@ -2816,7 +2816,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   padding-bottom: 15px; }
 
 .author-banner .author-banner-text p span {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
@@ -2978,7 +2978,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
 
 .pagination-section a {
   color: #fff;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.4px; }
@@ -3040,7 +3040,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   position: relative; }
 
 .tag-banner .tag-banner-text h2 {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 50px;
   text-align: center;
@@ -3058,7 +3058,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
   padding-bottom: 15px; }
 
 .tag-banner .tag-banner-text p span {
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
@@ -3094,7 +3094,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
 
 .pagination-section a {
   color: #fff;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.4px; }
@@ -3130,7 +3130,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
 
 .tag-item h3, .tag-item h4, .tag-item h5 {
   line-height: 1;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 10px; }
@@ -3351,7 +3351,7 @@ body.light-mode .preloader-wave:before, body.light-mode .preloader-wave:after {
 
 .single-portfolio-wrapper .portfolio-description .description-text button {
   margin-top: 20px;
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -3430,7 +3430,7 @@ input[type='submit'] {
   font-size: 16px;
   color: #fff;
   background: #6c5da7;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   border: 0;
   padding: 10px 30px;
@@ -3725,7 +3725,7 @@ input[type='submit']:hover {
   position: relative;
   display: inline-block;
   margin-bottom: 15px;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   font-size: 18px;
   text-transform: uppercase;
@@ -3873,7 +3873,7 @@ input[type='submit']:hover {
   color: #fff;
   text-transform: uppercase;
   font-size: 16px;
-  font-family: Oswald,sans-serif;
+  font-family: Raleway,sans-serif;
   font-weight: 400;
   border: 0;
   height: 50px;
@@ -4042,7 +4042,7 @@ input[type='submit']:hover {
 
 .about-us-wrapper .about-title-section-wrapper .about-page-title .title-text h6 {
   color: #6c5da7;
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 2.16px;
@@ -4066,7 +4066,7 @@ input[type='submit']:hover {
 
 .about-us-wrapper .estabilishment-section .estabilishment-text h6 {
   color: #6c5da7;
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1.92px;
@@ -4080,7 +4080,7 @@ input[type='submit']:hover {
 
 .about-us-wrapper .estabilishment-section .estabilishment-text button {
   margin-top: 70px;
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -4130,7 +4130,7 @@ input[type='submit']:hover {
 
 .about-us-wrapper .success-section-wrapper .success-title h6 {
   color: #6c5da7;
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1.92px;
@@ -4160,7 +4160,7 @@ input[type='submit']:hover {
   line-height: 75px; }
 
 .about-us-wrapper .success-section-wrapper .success-items-area .single-success h6 {
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.8px;
@@ -4179,7 +4179,7 @@ input[type='submit']:hover {
 
 .about-us-wrapper .authors-section-wrapper .authors-section-title h6 {
   color: #6c5da7;
-  font-family: Oswald;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1.92px;
@@ -4679,7 +4679,7 @@ strong {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
   text-transform: uppercase;
-  font-family: 'Roboto Slab'; }
+  font-family: 'Josefin Sans'; }
 
 .greedy-nav {
   background-color: transparent; }

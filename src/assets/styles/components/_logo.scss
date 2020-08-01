@@ -3,11 +3,11 @@
 \* ------------------------------------------------------------ */
 
 .logo {
-	margin: 0 -10px;
+	/*margin: 0 -10px;*/
 	display: block;
 
 	@include breakpoint-down(mobile) {
 		margin: 0;
-		max-width: 87px;
+	/*	max-width: 87px;*/
 	}
 }

@@ -5,7 +5,7 @@
 .pp-section {
 	.pp-tableCell {
 		@media(max-height: 850px) {
-			display: block;
+			display: block !important;
 		}
 	}
 }

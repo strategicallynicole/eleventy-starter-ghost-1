@@ -10,6 +10,26 @@ const inputDir = "src";
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const htmlMinTransform = require("./_config/html-min-transform.js");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setBrowserSyncConfig({
+    ...eleventyConfig.browserSyncConfig,
+    callbacks: {
+      ready: function(err, bs) {
+
+        bs.addMiddleware("*", (req, res) => {
+          const content_404 = fs.readFileSync('src/404.html');
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          // Add 404 http status code in request header.
+          // res.writeHead(404, { "Content-Type": "text/html" });
+          res.writeHead(404);
+          res.end();
+        });
+      }
+    }
+  });
+};
 // Init Ghost API
 const api = new ghostContentAPI({
   url: process.env.GHOST_API_URL,
@@ -31,6 +51,7 @@ const stripDomain = url => {
 
 module.exports = function(config) {
   sass('./src/assets/_scss/main.scss', './src/assets/css/main.css');
+  sass('./src/_includes/components/base/base.scss', './src/assets/css/base.css');
 
   config.addPlugin(syntaxHighlight);
   config.addWatchTarget("./src/assets/_scss/");
@@ -49,12 +70,17 @@ module.exports = function(config) {
       return minified.code;
   });
 
-  
+  module.exports = {
+    "title": "OAKwave",
+    "description": "OAKwave",
+    "rootUrl" : "https://www.oakwave.com",
+    "disqusShortname" : "oakwave",
+  };
   // Minify HTML
   let env = process.env.ELEVENTY_ENV;
 
   // Layout aliases can make templates more portable
-  config.addLayoutAlias('default', 'layouts/base.njk');
+  config.addLayoutAlias('default', '_layouts/base.njk');
 
   // Add some utility filters
   config.addFilter("squash", require("./_config/filters/squash.js"));
@@ -63,22 +89,26 @@ module.exports = function(config) {
 
 
   config.addTransform("htmlmin", htmlMinTransform);
-  config.addPassthroughCopy("/src/js");
-  config.addPassthroughCopy("/src/assets/vendor");
-  config.addPassthroughCopy("/src/assets/js");
-  config.addPassthroughCopy("/src/assets/styles");
-  config.addPassthroughCopy("./src/assets/css/neumorphism.css");
+  config.addPassthroughCopy("./src/js");
+  config.addPassthroughCopy("./src/assets/vendor");
+  config.addPassthroughCopy("./src/assets/js");
+  config.addPassthroughCopy("./src/assets/styles");
+  config.addPassthroughCopy("./src/assets/css/main.css");
+  config.addPassthroughCopy("./src/_includes/components");
+  config.addPassthroughCopy("./src/_includes/components/base/base.css");
+  config.addPassthroughCopy("./src/assets/css/base.css");
+  config.addPassthroughCopy("./src/_includes/components/base/core.min.js");
+  config.addPassthroughCopy("./src/_includes/components/base/script.js");
 
-  config.addPassthroughCopy("/src/assets/images");
+  config.addPassthroughCopy("./src/assets/images");
   config.addPassthroughCopy(`${inputDir}/assets/`, 'assets');
 
   config.addPassthroughCopy("./src/assets/css");
-  config.addPassthroughCopy(`${inputDir}/assets`, 'assets');
   config.addTransform("htmlmin", htmlMinTransform);
   config.addPlugin(pluginRSS);
-  config.addPassthroughCopy("/src/js");
-  config.addPassthroughCopy("/src/css");
-  config.addPassthroughCopy("/src/_includes/css");
+  config.addPassthroughCopy("./src/js");
+  config.addPassthroughCopy("./src/css");
+  config.addPassthroughCopy("./src/_includes/css");
 
 
 
@@ -286,7 +316,7 @@ module.exports = function(config) {
     },
 
     // Files read by Eleventy, add as needed
-    templateFormats: ["njk", "md", "txt", "pug", "html"],
+    templateFormats: ["njk", "md", "txt", "pug", "html", "hbs"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true,

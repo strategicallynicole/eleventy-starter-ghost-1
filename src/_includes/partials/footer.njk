@@ -2,16 +2,7 @@
    
     <!--==================== Footer Section ======================-->
     <div class="footer-wrapper">
-        <!-- subscribe section -->
-         {% if collections.docs %}
-            <div class="site-foot-nav-right">
-                {% for doc in collections.docs %}
-                    <a {% if page.url == doc.url %}aria-current="page"{% endif %}  class="site-foot-nav-item" href="{{ doc.url }}">
-                        {{ doc.meta_title if doc.meta_title else doc.title }}
-                    </a>
-                {% endfor %}
-            </div>
-        {% endif %}
+       
         <div class="subscribe-section has-thumbimage" style="background-image: url(assets/img/banner/mail.jpg)">
             <div class="position-relative">
                 <div class="subscribe-text">
@@ -33,10 +24,17 @@
         <!-- footer socia section -->
         <div class="footer-social-section-wrapper">
             <div class="brand">
-                <h4>Delas</h4>
+								<img src="/assets/img/logosfinal/logo_logo-full-stacked-purple-white.svg" width="200" alt="">
             </div>
-            <div class="social-section">
-                <h4>CONNECT</h4>
+
+             <!-- subscribe section -->
+         {% if collections.docs %}
+            <div class="site-foot-nav-right">
+               <h3><a href="/">Home</a> | <a href="/newabout">About</a> | <a href="/blog">Blog  | </a> <a href="/contact">Contact</a></h3>
+            </div>
+        {% endif %}
+            <div class="social-section"> 
+                <h5>CONNECT</h5>
                 <div class="social-icons">
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -52,7 +50,7 @@
             <div class="copyright-text">
                 <p>
                     Made with love by
-                    <a target="_blank" href="https://electronthemes.com/">electronthemes</a>. ALl rights reserved &copy; 2019
+                    <a target="_blank" href="">Nicole</a>. ALl rights reserved &copy; 2019
                 </p>
             </div>
         </div>
