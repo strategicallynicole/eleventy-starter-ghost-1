@@ -1,0 +1,18 @@
+---
+pagination:
+  data: collections.posts
+  size: 100
+  alias: posts
+layout: slides.njk
+---
+
+{% from "partials/card.njk" import card %}
+
+{% set title = "Posts" %}
+{% block content %}
+    {% include "partials/featured-slider-area.njk" %}
+
+    {% include "partials/latestnews.njk" %}
+
+  
+{% endblock%}

@@ -40,10 +40,12 @@
     "eleventy-plugin-lazyimages": "liamfiddler/eleventy-plugin-lazyimages",
     "eleventy-plugin-local-images": "^0.4.0",
     "eslint-utils": "2.1.0",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "node-sass-promise": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "7.7.0",
-    "eslint-plugin-ghost": "1.5.0"
+    "eslint-plugin-ghost": "1.5.0",
+    "sass": "^1.26.10"
   }
 }

@@ -9,6 +9,21 @@ const ghostContentAPI = require("@tryghost/content-api");
 
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 
+const sass = require('./config/sass-process');
+
+module.exports = config => {
+    //Watching for modificaions in style directory
+    sass('./src/_process/_scss/_neu/neu.scss', './src/_includes/css/neu.css');
+}
+module.exports = function(eleventyConfig) {
+  // Output directory: _site
+
+  // Copy `img/` to `_site/img`
+  eleventyConfig.addPassthroughCopy("assets");
+  
+  // Copy `css/fonts/` to `_site/css/fonts`
+  // If you use a subdirectory, it’ll copy using the same directory structure.
+};
 // Init Ghost API
 const api = new ghostContentAPI({
   url: process.env.GHOST_API_URL,
@@ -29,9 +44,9 @@ module.exports = function(config) {
   config.addPlugin(pluginRSS);
 
   // Apply performance attributes to images
-  config.addPlugin(lazyImages, {
-    cacheFile: ""
-  });
+  //config.addPlugin(lazyImages, {
+   // cacheFile: ""
+  //});
 
   // Copy images over from Ghost
   config.addPlugin(localImages, {
@@ -199,7 +214,9 @@ module.exports = function(config) {
   return {
     dir: {
       input: "src",
-      output: "dist"
+      output: "dist",
+      includes: "_includes",
+      layouts: "layouts"
     },
 
     // Files read by Eleventy, add as needed
