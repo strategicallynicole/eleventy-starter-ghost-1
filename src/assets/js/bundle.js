@@ -139,8 +139,13 @@ const $nav = $('.js-nav');
 
 $navTrigger.on('click', function(event) {
 	event.preventDefault();
+<<<<<<< HEAD
 	$(this).toggleClass('is-open');
 	$('.bar').toggleClass('is-hidden');
+=======
+	$(this).toggleClass('is-hidden');
+	$('.bar').toggleClass('is-open');
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 
 	$nav.slideToggle();
 });

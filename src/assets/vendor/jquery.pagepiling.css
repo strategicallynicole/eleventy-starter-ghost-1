@@ -52,7 +52,11 @@ html, body {
 }
 .pp-tableCell {
     display: table-cell;
+<<<<<<< HEAD
     vertical-align: middle;
+=======
+    vertical-align: top !important;
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
     width: 100%;
     height: 100%;
 }

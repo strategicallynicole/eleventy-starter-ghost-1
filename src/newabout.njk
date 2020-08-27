@@ -1,9 +1,20 @@
 ---
+<<<<<<< HEAD
 name: About
 permalink: trueabout
 layout: base.njk
 ---
 
+=======
+pagination:
+  data: collections.posts
+  size: 1
+  alias: posts
+name: About
+---
+
+{% extends './_layouts/base.njk' %}
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 
 {% set title = "OAKwave Marketing Strategy" %}
 {% block stylesandscripts %}
@@ -11,6 +22,7 @@ layout: base.njk
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/_includes/css/neu.css">
 
  <script src="/_includes/js/core.js"></script>
@@ -21,6 +33,16 @@ layout: base.njk
 {% block footerscripts %}
    {% endblock footerscripts %}
 
+=======
+    <link rel="stylesheet" href="/assets/css/base.css">
+
+
+{% endblock stylesandscripts %}
+
+{% block footerscripts %}
+    <script src="/_includes/components/base/core.min.js"></script>
+    <script src="/_includes/components/base/script.js"></script>{% endblock footerscripts %}
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
  {% block content %}
 
 		<!-- Your header goes here -->
@@ -28,7 +50,11 @@ layout: base.njk
 
 		<section class="section-about">
             <div class="shell">
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 			<div class="section__decoration section__decoration--1">
 				<img src="/assets/images/temp/ball-1@2x.png" alt="" width="173" height="218">
 			</div><!-- /.section__decoration -->

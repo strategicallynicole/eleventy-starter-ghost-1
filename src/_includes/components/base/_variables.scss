@@ -33,10 +33,17 @@ $spacers: (
 
 
 // Body
+<<<<<<< HEAD
 $body-bg:    radial-gradient(54.85% 46.25% at 50% 50%, #373A42 0%, #000000 100%);
 $body-color: $gray-500;
 
  
+=======
+$body-bg:    $gray-900;
+$body-color: $gray-500;
+
+
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 // Links
 $link-hover-color: adjust-color( $primary, $hue: 0deg, $saturation: -2%, $lightness: -8% ); // #58B4C9
 

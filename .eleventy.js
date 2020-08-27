@@ -1,11 +1,12 @@
 require("dotenv").config();
-
+const sass = require('./_config/sass-process.js');
 const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
+<<<<<<< HEAD
 const Handlebars = require("handlebars");
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 const url = "http://localhost:8080";
@@ -52,6 +53,31 @@ module.exports = function(eleventyConfig) {
   
   // Copy `css/fonts/` to `_site/css/fonts`
   // If you use a subdirectory, it’ll copy using the same directory structure.
+=======
+const inputDir = "src";
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+const htmlMinTransform = require("./_config/html-min-transform.js");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setBrowserSyncConfig({
+    ...eleventyConfig.browserSyncConfig,
+    callbacks: {
+      ready: function(err, bs) {
+
+        bs.addMiddleware("*", (req, res) => {
+          const content_404 = fs.readFileSync('src/404.html');
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          // Add 404 http status code in request header.
+          // res.writeHead(404, { "Content-Type": "text/html" });
+          res.writeHead(404);
+          res.end();
+        });
+      }
+    }
+  });
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 };
 // Init Ghost API
 const api = new ghostContentAPI({
@@ -65,26 +91,120 @@ const stripDomain = url => {
   return url.replace(process.env.GHOST_API_URL, "");
 };
 
+/*const excerpt = require('./src/_config/excerpt.js');*/
+
+// module.exports = function(eleventyConfig) {
+//  eleventyConfig.addJavaScriptFunction("excerpt", excerpt());
+// };
+
+
 module.exports = function(config) {
+  sass('./src/assets/_scss/main.scss', './src/assets/css/main.css');
+  sass('./src/_includes/components/base/base.scss', './src/assets/css/base.css');
+
+  config.addPlugin(syntaxHighlight);
+  config.addWatchTarget("./src/assets/_scss/");
+
+  // minify the html output
+  config.addTransform("htmlmin", require("./_config/utils/htmlmin.js"));
+
+  // compress and combine js files
+  config.addFilter("jsmin", function(code) {
+    const UglifyJS = require("uglify-js");
+    let minified = UglifyJS.minify(code);
+      if( minified.error ) {
+          console.log("UglifyJS error: ", minified.error);
+          return code;
+      }
+      return minified.code;
+  });
+
+  module.exports = {
+    "title": "OAKwave",
+    "description": "OAKwave",
+    "rootUrl" : "https://www.oakwave.com",
+    "disqusShortname" : "oakwave",
+  };
   // Minify HTML
+  let env = process.env.ELEVENTY_ENV;
+
+  // Layout aliases can make templates more portable
+  config.addLayoutAlias('default', '_layouts/base.njk');
+
+  // Add some utility filters
+  config.addFilter("squash", require("./_config/filters/squash.js"));
+  config.addFilter("dateDisplay", require("./_config/filters/date.js") );
+  
+
+
   config.addTransform("htmlmin", htmlMinTransform);
+  config.addPassthroughCopy("./src/js");
+  config.addPassthroughCopy("./src/assets/vendor");
+  config.addPassthroughCopy("./src/assets/js");
+  config.addPassthroughCopy("./src/assets/styles");
+  config.addPassthroughCopy("./src/assets/css/main.css");
+  config.addPassthroughCopy("./src/_includes/components");
+  config.addPassthroughCopy("./src/_includes/components/base/base.css");
+  config.addPassthroughCopy("./src/assets/css/base.css");
+  config.addPassthroughCopy("./src/_includes/components/base/core.min.js");
+  config.addPassthroughCopy("./src/_includes/components/base/script.js");
+
+  config.addPassthroughCopy("./src/assets/images");
+  config.addPassthroughCopy(`${inputDir}/assets/`, 'assets');
+
+  config.addPassthroughCopy("./src/assets/css");
+  config.addTransform("htmlmin", htmlMinTransform);
+  config.addPlugin(pluginRSS);
+  config.addPassthroughCopy("./src/js");
+  config.addPassthroughCopy("./src/css");
+  config.addPassthroughCopy("./src/_includes/css");
+
+
+
+
+  // add support for syntax highlighting
+  config.addPlugin(syntaxHighlight);
+
+  // minify the html output
+  config.addTransform("htmlmin", require("./_config/utils/minify-html.js"));
+
+  // compress and combine js files
+  config.addFilter("jsmin", function(code) {
+    const UglifyJS = require("uglify-js");
+    let minified = UglifyJS.minify(code);
+      if( minified.error ) {
+          console.log("UglifyJS error: ", minified.error);
+          return code;
+      }
+      return minified.code;
+  });
+
+
+  // pass some assets right through
+  config.addPassthroughCopy("./src/site/images");
 
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
 
   // Apply performance attributes to images
+<<<<<<< HEAD
   //config.addPlugin(lazyImages, {
    // cacheFile: ""
   //});
+=======
+  /*config.addPlugin(lazyImages, {
+    cacheFile: ""
+  });*/
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 
   // Copy images over from Ghost
-  config.addPlugin(localImages, {
+ /* config.addPlugin(localImages, {
     distPath: "dist",
     assetPath: "/assets/images",
     selector: "img",
     attribute: "data-src", // Lazy images attribute
     verbose: false
-  });
+  });*/
 
   // Inline CSS
   config.addFilter("cssmin", code => {
@@ -240,19 +360,34 @@ module.exports = function(config) {
   });
 
   // Eleventy configuration
+  env = (env=="seed") ? "prod" : env;
   return {
     dir: {
       input: "src",
       output: "dist",
       includes: "_includes",
+<<<<<<< HEAD
       layouts: "layouts",
       partials: "_includes/partials"
     },
 
     // Files read by Eleventy, add as needed
     templateFormats: ["css", "njk", "md", "txt", "hbs"],
+=======
+      layouts: "_layouts",
+      data: "_data"
+    },
+
+    // Files read by Eleventy, add as needed
+    templateFormats: ["njk", "md", "txt", "pug", "html", "hbs"],
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   };
 };
+
+
+
+
+

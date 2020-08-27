@@ -1,16 +1,54 @@
 ---
+<<<<<<< HEAD
 layout: post.njk
 permalink: 404.html
 ---
 
 {% set codeinjection_head = doc.codeinjection_head %}
 {% set codeinjection_foot = doc.codeinjection_foot %}
+=======
+name: 404
+permalink: 404.html
+---
 
-{% set title = "Error 404" %}
 
-{% block content %}
-    <article class="content" style="text-align:center">
-        <h1 class="content-title">Error 404</h1>
-        <section class="content-body">Page not found, <a href="/">return home</a> to start over</section>
-    </article>
-{% endblock %}
+{% extends './_layouts/base.njk' %}
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
+
+
+
+
+  {% block stylesandscripts %}   
+
+	<link href="/assets/css/gandalf.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+ {% endblock stylesandscripts %}
+
+
+{% set title = "OAKwave Marketing Strategy" %}
+
+
+
+
+ {% block content %}
+<div class="gimmesomeroom"></div>
+
+<div class="wrapper">
+		<section class="section gimmesomeroom">
+            <div class="shell">
+<h1 class="text-white text-center"> You shall not pass</h1>
+<p class="text-white text-center">Hey there, you got to a 404 page.  That stinks.  Wanna head back to <a href="https://www.oakwave.com">our homepage</a>?</p>
+<div class="gandalf">
+  <div class="fireball"></div>
+  <div class="skirt"></div>
+  <div class="sleeves"></div>
+  <div class="shoulders">
+    <div class="hand left"></div>
+    <div class="hand right"></div>
+  </div>
+  <div class="head">
+    <div class="hair"></div>
+    <div class="beard"></div>
+  </div>
+</div></section></div>
+{% endblock content %}	

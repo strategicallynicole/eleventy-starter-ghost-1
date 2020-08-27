@@ -24,18 +24,31 @@
 	
 // Font.
 	$font: (
+<<<<<<< HEAD
 		family:					('Josefin Sans', sans-serif),
 		family-fixed:			('Josefin Sans', sans-serif),
 		weight:					100,
 		weight-bold:			300,
 		kerning-alt:			0.25em,
 		headerfamily:			('Oswald', sans-serif),
+=======
+		family:					('Proxima Nova, sans-serif'),
+		family-fixed:			('Proxima Nova, sans-serif'),
+		weight:					400,
+		weight-bold:			700,
+		kerning-alt:			0.25em,
+		headerfamily:			('Josefin Sans', sans-serif),
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 		headerweight:			300,
 		headerweight-bold:		500,
 		headerkerning-alt:		0.25em,
 		buttonfamily:			('Josefin Sans', sans-serif),
 		buttonweight:			normal,
+<<<<<<< HEAD
 		buttonweight-bold:		100,
+=======
+		buttonweight-bold:		700,
+>>>>>>> 8912585b8416651d09a267e34066b2ad651c2bed
 		buttonkerning-alt:		1
 	);
 	
