@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    {{!-- Base Meta --}}
+    <title>{{meta_title}} | {{@site.description}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- Styles'n'Scripts --}}
+    <!-- CSS Files -->
+
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset 'images/favicon.ico' }}">
+	<link rel="stylesheet" href="{{asset 'vendor/jquery.pagepiling.css' }}" type="text/css" media="all">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset "vendor/jquery-ui.min.css"}}" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/neus.css"}}" />
+	    <link rel="stylesheet" type="text/css" href="{{asset "css/bundle.css"}}" />
+{{> "partials/vendor/vendors"}}
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+</head>
+
+
+<body>
+	
+	<div class="wrapper">
+		<!-- Your header goes here -->
+
+
+		<div class="main">
+			<div class="shell">
+				<div class="main__inner">
+{{> "partials/bar"}}
+
+					<div class="main__content">
+						<div class="slider js-slider">
+							<div class="slider__content">
+								<section class="section section--hero js-animation-container">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="oswald section__title animation-spread js-split-new-line js-animation-spread js-init-animation">Hi.<br>We need to talk.</h2><!-- /.section__title -->
+
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">It's about your marketing and sales strategy again... It's been... underwhelming.</p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-2" class="btn-dark js-scroll-to">Your curiosity compels you.</a>
+
+												<a href="https://www.oakwave.com/about" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+
+											    <picture>
+  <source srcset="{{asset "/images/temp/image-1@2x.webp"}}" type="image/webp">
+  <img width="800" src="{{asset "images/temp/image-1@2x.png"}}" alt="OAKwave marketing strategy">
+</picture>
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section sectionhero -->
+
+								<section class="section section--alt js-animation-container" id="Section-2">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">Why do you keep your feelings all bottled up?</h2><!-- /.section__title -->
+
+											<p class="josefin animation-spread js-split-new-line js-animation-spread js-init-animation">You just want a solution that doesn’t give you more headaches than it gives you in actual acquisitions and makes more money for you than it costs.</p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-3" class="btn-dark js-scroll-to">Release your <br />inner fears.</a>
+
+												<a href="https://www.oakwave.com/about" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+
+											  <picture>
+  <source srcset="{{asset "/images/temp/image-2@2x.webp"}}" type="image/webp">
+  <img width="800"  class="metal" src="{{asset "images/temp/image-2@2x.png"}}" alt="OAKwave marketing strategy">
+</picture>
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
+
+								<section class="section section--offsets js-animation-container" id="Section-3">
+									<div class="section__inner duckytext">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">We help businesses quit duckin’ around </h2><!-- /.section__title -->
+
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">Your revenue is the only KPI that matters. Everything else is just bullshit noise.  We believe in breathing new life, fresh perspectives, and genuine solutions into broken marketing and sales.</p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-4" class="btn-dark js-scroll-to">Quit playin'.</a>
+
+												<a href="https://www.oakwave.com/about" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+
+											
+											  <picture>
+  <source srcset="{{asset "/images/temp/image-3@2x.webp"}}" type="image/webp">
+  <img width="3000"  class="metal ducky" src="{{asset "images/temp/image-3@2x.png"}}" alt="OAKwave marketing strategy">
+</picture>
+				
+										
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
+
+								<section class="section section--gutters js-animation-container" id="Section-4">
+									<div class="section__inner">
+										<div class="section__content">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">You’ve been looking for us for a long time.</h2><!-- /.section__title -->
+
+											<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">We're marketers, strategists, workhorses, consultants, and most likely the last folks standing in a zombie apocalypse..  </p>
+
+											<div class="section__actions js-actions">
+												<a href="#Section-5" class="btn-dark js-scroll-to">Find the one.</a>
+
+												<a href="https://www.oakwave.com/about" class="btn-dark">Skip the overview.</a>
+											</div><!-- /.section__actions -->
+										</div><!-- /.section__content -->
+
+										<div class="section__aside">
+
+														
+											  <picture>
+  <source srcset="{{asset "/images/temp/image-4@2x.webp"}}" type="image/webp">
+  <img width="800"  class="dragon" src="{{asset "images/temp/image-4@2x.png"}}" alt="OAKwave marketing strategy">
+</picture>
+				
+										</div><!-- /.section__aside -->
+									</div><!-- /.section__inner -->
+								</section><!-- /.section section--hero -->
+
+
+								<section class="section section--different js-animation-container" id="Section-5">
+									<div class="section__outer">
+										<div class="section__head">
+											<h2 class="section__title animation-spread js-split-new-line js-animation-spread js-init-animation">We’re good at what everyone says just says they’re good at.</h2><!-- /.section__title -->
+										</div><!-- /.section__head -->
+
+										<div class="section__body">
+											<div class="section__aside">
+
+																						  <picture>
+  <source srcset="{{asset "/images/temp/image-5@2x.png"}}" type="image/webp">
+  <img width="800"  class="cutie" src="{{asset "images/temp/image-5@2x.png"}}" alt="OAKwave marketing strategy">
+</picture>
+											</div><!-- /.section__aside -->
+
+											<div class="section__content">
+												<p class="animation-spread js-split-new-line js-animation-spread js-init-animation">Hands down, we are the most resourceful, creative, problem-solving marketing geniuses you will ever find. We’re really, really good at campaign concepts, branding, content, and strategy... and really, really bad at corporate frills, small talk, and sending Christmas cards.</p>
+
+												<div class="section__actions js-actions">
+													<a href="https://www.oakwave.com/schedule" class="btn-dark">Schedule a Call.</a>
+
+													<a href="https://www.oakwave.com/about" class="btn-dark">Learn More.</a>
+												</div><!-- /.section__actions -->
+											</div><!-- /.section__content -->
+										</div><!-- /.section__body -->
+									</div><!-- /.section__outer -->
+								</section><!-- /.section section--hero -->
+							</div><!-- /.slider__content -->
+						</div>
+					</div><!-- /.main__content -->
+				</div><!-- /.main__inner -->
+			</div><!-- /.shell -->
+		</div><!-- /.main -->
+
+
+		<!-- Your footer goes here -->
+
+	</div><!-- /.wrapper -->
+
+	<script src="{{asset 'vendor/jquery-3.1.1.min.js'}}"></script>
+<script type="text/javascript" src="{{asset 'vendor/jquery.pagepiling.js'}}"></script>
+<script type="text/javascript" src="{{asset 'vendor/jquery-ui.min.js'}}"></script>
+<script src="{{asset 'js/bundle.js'}}"></script>
+
+</body>
+</html>

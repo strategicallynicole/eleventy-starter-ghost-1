@@ -1,0 +1,107 @@
+{{!< default}}
+{{#is "page"}}
+{{#post}}
+<!-- Tag Srction Wrapper -->
+<div class="tag-banner-wrapper">
+    <div class="container-fluid max-width py-0">
+        <div class="tag-banner {{^if feature_image}}{{else}}banner-overlay{{/if}}" {{#if feature_image}}style="background-image: url('{{feature_image}}');"{{/if}}>
+            <div class="tag-banner-text">
+                <h2 data-aos="fade-down"><i class="fa fa-tags"></i>{{title}}</h2>
+                {{#if excerpt}}
+                    <p data-aos="fade-up">{{excerpt}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{#get "authors" include="count.posts" as |authordata|}}
+{{#if authors}}
+<div class="container">
+    <div class="author-card-wrapper">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="row">
+                    {{#authordata}}
+                    <!-- /single author card -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="single-author-card">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="author-card">
+                                        <div class="card-banner{{^if cover_image}} {{/if}}" {{#if cover_image}} style="background-image: url('{{cover_image}}')"
+                                            {{/if}}>
+                                            {{#if location}}
+                                            <p class="m-2 mr-4"><i class="fa fa-map-marker mr-2"></i> {{location}}</p>
+                                            {{/if}}
+                                        </div>
+                                        {{#if profile_image}}
+                                        <div class="author-front-img">
+                                            <img src="{{profile_image}}" alt="{{name}}">
+                                        </div>
+                                        {{/if}}
+                                        <div class="card-text">
+                                            <a href="{{url}}">{{name}}</a>
+                                            <div>
+                                                {{#if facebook}}
+                                                <a href="{{facebook_url}}"><i class="fa fa-facebook"></i></a>
+                                                {{/if}}
+                                                {{#if twitter}}
+                                                <a href="{{twitter_url}}"><i class="fa fa-twitter"></i></a>
+                                                {{/if}}
+                                                {{#if website}}
+                                                <a href="{{website}}"><i class="fa fa-globe"></i></a>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="author-card">
+                                        <div class="author-about">
+                                            {{#if profile_image}}
+                                            <div class="author-img">
+                                                <img src="{{profile_image}}" alt="{{name}}">
+                                            </div>
+                                            {{/if}}
+                                            <div class="author-name">
+                                                <a href="{{url}}">{{name}}</a>
+                                                <div class="card-text m-0 text-left">
+                                                    {{#if facebook}}
+                                                    <a href="{{facebook_url}}"><i class="fa fa-facebook"></i></a>
+                                                    {{/if}}
+                                                    {{#if twitter}}
+                                                    <a href="{{twitter_url}}"><i class="fa fa-twitter"></i></a>
+                                                    {{/if}}
+                                                    {{#if website}}
+                                                    <a href="{{website}}"><i class="fa fa-globe"></i></a>
+                                                    {{/if}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{#if bio}}
+                                        <div class="about-card-text">
+                                            <p>{{bio}}</p>
+                                        </div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /single author card -->
+                    {{/authordata}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Author Srction Wrapper -->
+{{/if}}
+{{/get}}
+<!-- /Tag Srction Wrapper -->
+{{/post}}
+{{/is}}
+
+
+{{!-- suscribe --}}
+{{> "partials/subscribe-section"}}

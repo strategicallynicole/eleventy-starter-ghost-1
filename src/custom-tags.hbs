@@ -1,0 +1,43 @@
+{{!< default}}
+{{#is "page"}}
+{{#post}}
+<!-- Tag Srction Wrapper -->
+<div class="tag-banner-wrapper">
+    <div class="container-fluid max-width py-0">
+        <div class="tag-banner {{^if feature_image}}half-bg{{else}}banner-overlay{{/if}}" {{#if feature_image}}style="background-image: url('{{feature_image}}');"{{/if}}>
+            <div class="tag-banner-text">
+                <h2 data-aos="fade-down"><i class="fa fa-tags"></i>{{title}}</h2>
+                {{#if excerpt}}
+                    <p data-aos="fade-up">{{excerpt}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{#get "tags" limit='all' include="count.posts"}}
+{{#if tags}}
+<div class="tag-sec section-padding">
+    <div class="container">
+        <div class="tag-items-wrap d-flex flex-wrap">
+            {{#foreach tags}}
+            <div class="tag-repeater" data-aos="fade-up">
+                <div class="tag-item" {{#if feature_image}}style="background-image: url('{{feature_image}}');"{{/if}}>
+                    <div class="tag-item-inner">
+                        <h4><a href="{{url}}">{{name}}</a></h4>
+                        <small>{{plural ../pagination.total empty='No Post' singular='% Post' plural='% Posts'}} in this tag</small>
+                    </div>
+                </div>
+            </div>
+            {{/foreach}}
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/get}}
+<!-- /Tag Srction Wrapper -->
+{{/post}}
+{{/is}}
+
+
+{{!-- suscribe --}}
+{{> "partials/subscribe-section"}}

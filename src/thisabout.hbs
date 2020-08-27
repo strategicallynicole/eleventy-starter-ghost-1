@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    {{!-- Base Meta --}}
+    <title>{{meta_title}} | {{@site.description}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- Styles'n'Scripts --}}
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/components/component.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/neus.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+	{{> "partials/vendor/vendors"}}
+
+</head>
+
+<body class="{{body_class}}">
+    {{> "partials/header"}}
+<div class="wrapper">
+
+
+   <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">pro sidebar</a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Jhon
+                            <strong>Smith</strong>
+                        </span>
+                        <span class="user-role">Administrator</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-item sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span class="menu-text">Dashboard</span>
+                                <span class="badge badge-pill badge-warning">New</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Dashboard 1
+                                            <span class="badge badge-pill badge-success">Pro</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dashboard 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dashboard 3</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="menu-text">E-commerce</span>
+                                <span class="badge badge-pill badge-danger">3</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Products
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Orders</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Credit cart</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="far fa-gem"></i>
+                                <span class="menu-text">Components</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">General</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Panels</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Forms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-chart-line"></i>
+                                <span class="menu-text">Charts</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Pie chart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Line chart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bar chart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Histogram</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-globe"></i>
+                                <span class="menu-text">Maps</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Google maps</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Open street map</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-book"></i>
+                                <span class="menu-text">Documentation</span>
+                                <span class="badge badge-pill badge-primary">Beta</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                <span class="menu-text">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-folder"></i>
+                                <span class="menu-text">Examples</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-footer  -->
+            <div class="sidebar-footer">
+                <div class="dropdown">
+
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge badge-pill badge-warning notification">3</span>
+                    </a>
+                    <div class="dropdown-menu notifications" aria-labelledby="dropdownMenuMessage">
+                        <div class="notifications-header">
+                            <i class="fa fa-bell"></i>
+                            Notifications
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <div class="notification-content">
+                                <div class="icon">
+                                    <i class="fas fa-check text-success border border-success"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In totam explicabo</div>
+                                    <div class="notification-time">
+                                        6 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="notification-content">
+                                <div class="icon">
+                                    <i class="fas fa-exclamation text-info border border-info"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In totam explicabo</div>
+                                    <div class="notification-time">
+                                        Today
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="notification-content">
+                                <div class="icon">
+                                    <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In totam explicabo</div>
+                                    <div class="notification-time">
+                                        Yesterday
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-center" href="#">View all notifications</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-envelope"></i>
+                        <span class="badge badge-pill badge-success notification">7</span>
+                    </a>
+                    <div class="dropdown-menu messages" aria-labelledby="dropdownMenuMessage">
+                        <div class="messages-header">
+                            <i class="fa fa-envelope"></i>
+                            Messages
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <div class="message-content">
+                                <div class="pic">
+                                    <img src="img/user.jpg" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="message-title">
+                                        <strong> Jhon doe</strong>
+                                    </div>
+                                    <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In totam explicabo</div>
+                                </div>
+                            </div>
+
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="message-content">
+                                <div class="pic">
+                                    <img src="img/user.jpg" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="message-title">
+                                        <strong> Jhon doe</strong>
+                                    </div>
+                                    <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In totam explicabo</div>
+                                </div>
+                            </div>
+
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="message-content">
+                                <div class="pic">
+                                    <img src="img/user.jpg" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="message-title">
+                                        <strong> Jhon doe</strong>
+                                    </div>
+                                    <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. In totam explicabo</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-center" href="#">View all messages</a>
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-cog"></i>
+                        <span class="badge-sonar"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
+                        <a class="dropdown-item" href="#">My profile</a>
+                        <a class="dropdown-item" href="#">Help</a>
+                        <a class="dropdown-item" href="#">Setting</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fa fa-power-off"></i>
+                    </a>
+                </div>
+                <div class="pinned-footer">
+                    <a href="#">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+		<section class="section-about">
+			<div class="section__decoration section__decoration--1">
+				<img src="{{asset 'images/temp/ball-1@2x.png'}}" alt="" width="173" height="218">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--2">
+				<img src="{{asset 'images/temp/ball-2@2x.png'}}" alt="" width="145" height="122">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--3">
+				<img src="{{asset 'images/temp/ball-3@2x.png'}}" alt="" width="325" height="304">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--4">
+				<img src="{{asset 'images/temp/ball-4@2x.png'}}" alt="" width="218" height="218">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--5">
+				<img src="{{asset 'images/temp/ball-5@2x.png'}}" alt="" width="84" height="84">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--6">
+				<img src="{{asset 'images/temp/ball-6@2x.png'}}" alt="" width="207" height="207">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--7">
+				<img src="{{asset 'images/temp/ball-7@2x.png'}}" alt="" width="258" height="215">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--8">
+				<img src="{{asset 'images/temp/ball-8@2x.png'}}" alt="" width="116" height="116">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--9">
+				<img src="{{asset 'images/temp/ball-9@2x.png'}}" alt="" width="206" height="207">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--10">
+				<img src="{{asset 'images/temp/ball-10@2x.png'}}" alt="" width="145" height="122">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--11">
+				<img src="{{asset 'images/temp/ball-11@2x.png'}}" alt="" width="325" height="304">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--12">
+				<img src="{{asset 'images/temp/ball-12@2x.png'}}" alt="" width="377" height="420">
+			</div><!-- /.section__decoration -->
+
+			<div class="section__decoration section__decoration--13">
+				<img src="{{asset 'images/temp/ball-13@2x.png'}}" alt="" width="124" height="124">
+			</div><!-- /.section__decoration -->
+<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+
+			<div class="shell">
+				<div class="section__outer">
+					<div class="section__aside">
+    {{> "partials/bar"}}
+					</div><!-- /.section__aside -->
+
+					<div class="section__content">
+						<div class="section__head js-animation-container">
+							<h1 class="animation-spread js-split-new-line js-animation-spread js-init-animation">You deserve the truth about your business and marketing.</h1>
+
+							<h2 class="animation-spread js-split-new-line js-animation-spread js-init-animation bold strong">We have the balls to tell you.</h2>
+						</div><!-- /.section__head -->
+
+						<div class="section__body">
+							<div class="item">
+								<div class="item__image">
+									<img src="{{asset 'images/temp/image-6@2x.png'}}" alt="" width="670" height="420">
+								</div><!-- /.item__image -->
+
+								<div class="item__content">
+									<h2 class="item__title">About us</h2><!-- /.item__title -->
+
+									<p>We call ourselves strategy symphony conductors, marketing de-spaghettification experts, and problem-solving superheroes. We are ushering in a new wave of agency relationships while relying upon the oak solid foundations that made marketing amazing in the first place.</p>
+								</div><!-- /.item__content -->
+							</div><!-- /.item -->
+
+							<div class="accordion">
+									<h2 class="accordion__title">Our Services</h2><!-- /.accordion__title -->
+
+								<div class="accordion__section is-active">
+									<div class="accordion__head">
+										<h4>Marketing & Growth Strategy</h4>
+
+										<p>Do you know how parents always say, "I wish there was a manual on raising kids?"</p>
+									</div><!-- /.accordion__head -->
+
+									<div class="accordion__body">
+										<div class="accordion__image">
+											<img src="{{asset 'img/renderings/strategy.png'}}" alt="" width="343" height="352">
+										</div><!-- /.accordion__image -->
+
+										<div class="accordion__content">
+																					<h4>Marketing & Growth Strategy</h4>
+
+										<h6>Do you know how parents always say, "I wish there was a manual on raising kids?"</h6>
+
+											<p>That's kind of what our strategies are, except for business growth. Go ahead, try to find a better marketing, sales, or growth strategy, it's right next to the Fountain of Youth and anything marketed as "free" that's actually free.</p>
+										
+									
+										</div><!-- /.accordion__content -->
+									</div><!-- /.accordion__body -->
+								</div><!-- /.accordion__section -->
+
+								<div class="accordion__section">
+									<div class="accordion__head">
+										<h4>											BRAND STRATEGY, POSITIONING, AND VOICE
+</h4>
+
+<p>Your brand is your foundation and a weak foundation makes for a shaky house.
+</p>									</div><!-- /.accordion__head -->
+
+									<div class="accordion__body">
+										<div class="accordion__image">
+											<img src="{{asset 'img/renderings/loudspeaker.png'}}" alt="" width="343" height="352">
+										</div><!-- /.accordion__image -->
+
+										<div class="accordion__content">
+							<h4>											BRAND STRATEGY, POSITIONING, AND VOICE
+</h4>
+
+<h6>Your brand is your foundation and a weak foundation makes for a shaky house.
+</h6>	
+<p>
+Unifying your organization behind a single voice, position, slogan, and value proposition is critical to your success. We make this process painless and actually fun.
+					</p>					</div><!-- /.accordion__content -->
+									</div><!-- /.accordion__body -->
+								</div><!-- /.accordion__section -->
+
+								<div class="accordion__section">
+									<div class="accordion__head">
+										<h4>		CONTENT BIRTH, REBIRTH, & EVOLUTION</h4>
+<p>This is not your intern's SEO-packed, boring Wikipedia entry!</p>
+									</div><!-- /.accordion__head -->
+
+									<div class="accordion__body">
+										<div class="accordion__image">
+											<img src="{{asset 'img/renderings/content.png'}}" alt="" width="343" height="352">
+										</div><!-- /.accordion__image -->
+
+										<div class="accordion__content">
+									<h4>		CONTENT BIRTH, REBIRTH, & EVOLUTION</h4>
+<h6>This is not your intern's SEO-packed, boring Wikipedia entry!</h6>
+
+<p>
+Your content needs to grab the attention of your target market and hold it. This takes a special blend of sales, marketing, and wordsmithing. We believe a hundred amazing words will change the world for your business, not a hundred mediocre articles.</p>
+										</div><!-- /.accordion__content -->
+									</div><!-- /.accordion__body -->
+								</div><!-- /.accordion__section -->
+
+								<div class="accordion__section">
+									<div class="accordion__head">
+											<h4>WEBSITE & MARTECH</h4>
+<p>The base of your marketing efforts and the epicenter of your marketing effectiveness gauge.</p>
+									</div><!-- /.accordion__head -->
+
+									<div class="accordion__body">
+										<div class="accordion__image">
+											<img src="{{asset '/img/renderings/flask.png'}}" alt="" width="343">
+										</div><!-- /.accordion__image -->
+
+										<div class="accordion__content">
+											<h4>WEBSITE & MARTECH</h4>
+<h6>The base of your marketing efforts and the epicenter of your marketing effectiveness gauge.</h6>
+<p>
+
+Acting as the tracking epicenter of your marketing efforts, your website's form and function will make or break marketing. We assess, rethink, and offer tactical steps to lift impact of the homebase of your efforts.</p>
+										</div><!-- /.accordion__content -->
+									</div><!-- /.accordion__body -->
+								</div><!-- /.accordion__section -->
+
+								<div class="accordion__section">
+									<div class="accordion__head">
+										<h4>OTHER SERVICES
+</h4>
+
+	<p>	If we can't do it, we got a guy.
+</p>
+									</div><!-- /.accordion__head -->
+
+									<div class="accordion__body">
+										<div class="accordion__image">
+											<img src="{{asset '/img/renderings/help.png'}}" alt="" height="352">
+										</div><!-- /.accordion__image -->
+
+										<div class="accordion__content">
+										<h4>	If we can't do it, we got a guy.
+</h4><p>
+
+For the majority of our clients, we deliver a comprehensive, holistic marketing strategy (read: blueprints for three years of brand, marketing, and sales).
+
+We follow that up with on-demand CMO-as-a-service consultation services delivered on a regular basis. For others, we offer turnkey execution and 100% project management services.</p>
+										</div><!-- /.accordion__content -->
+									</div><!-- /.accordion__body -->
+								</div><!-- /.accordion__section -->
+
+							<!--	<div class="accordion__section">
+									<div class="accordion__head">
+										<h4>Marketing & Growth Strategy</h4>
+
+										<p>Do you know how parents always say, "I wish there was a manual on parenting?"</p>
+									</div>--><!-- /.accordion__head -->
+
+								<!--	<div class="accordion__body">
+										<div class="accordion__image">
+											<img src="{{asset 'images/temp/image-7@2x.png'}}" alt="" width="343" height="352">
+										</div>--><!-- /.accordion__image -->
+
+									<!--	<div class="accordion__content">
+											<h6>Your brand is your foundation and a weak foundation makes for a shaky house.</h6>
+
+											<p>Unifying your organization behind a single voice, position, slogan, and value proposition is critical to your success. We make this process painless and actually fun.</p>
+									</div>--><!-- /.accordion__content -->
+						<!--			</div> /.accordion__body -->
+							<!--		</div><! /.accordion__section -->
+						<!--		</div><! /.accordion -->
+
+			</div><!-- /.shell -->
+		</section><!-- /.section-about -->
+
+			<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+<div style="padding-top:100px" class="gimmesomeroom"></div>
+								
+<div class="gimmesomeroom"></div>
+{{> "partials/content/about-us/faq"}}
+						             
+					<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+	                
+
+       
+   
+<div class="gimmesomeroom"></div>
+<div class="gimmesomeroom"></div>
+
+        
+
+
+   
+{{> "partials/popular-posts"}}   
+    {{> "partials/footer"}}
+
+</div></div>
+</div>
+
+
+				</div><!-- /.section__outer -->
+
+    </div>
+    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
+    <!--++++++++ Start footer script section ++++++++-->
+    <!-- jQuery JS -->
+    <script src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset 'vendor/jquery-ui.min.js'}}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{{asset "/js/bootstrap.min.js"}}"></script>
+    <!-- Plugins JS -->
+    <script src="{{asset "/js/plugins.js"}}"></script>
+    <!-- Custom Script JS -->
+    <script src="{{asset "/js/scripts.js"}}"></script>
+    <script src="{{asset 'js/bundle.js'}}"></script>
+<!--<script src="code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="{{asset 'vendor/jquery-3.1.1.min.js'}}"></script>
+<script type="text/javascript" src="{{asset 'vendor/jquery.pagepiling.js'}}"></script>-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+    <script>
+        const homeUrl = '{{ @site.url }}';
+    </script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+        var stripe = getParameterByName('stripe');
+        if (action == 'subscribe') {
+            $('body').addClass("subscribe-success");
+        }
+        if (action == 'signup') {
+            window.location = '{{@site.url}}/signup/?action=checkout';
+        }
+        if (action == 'checkout') {
+            $('body').addClass("signup-success");
+        }
+        if (action == 'signin') {
+            $('body').addClass("signin-success");
+        }
+        if (stripe == 'success') {
+            $('body').addClass("checkout-success");
+        }
+        $('.notification-close').click(function () {
+            $(this).parent().addClass('closed');
+            var uri = window.location.toString();
+            if (uri.indexOf("?") > 0) {
+                var clean_uri = uri.substring(0, uri.indexOf("?"));
+                window.history.replaceState({}, document.title, clean_uri);
+            }
+        });
+        // Reset form on opening subscrion overlay
+        $('.subscribe-button').click(function() {
+            $('.subscribe-overlay form').removeClass();
+            $('.subscribe-email').val('');
+        });
+
+        {{#is "post"}}
+            var disqus_config = function () {
+                this.page.url = "{{url absolute="true"}}";
+                this.page.identifier = "ghost-{{comment_id}}";
+            };
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://oakwavedisqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        {{/is}}
+        {{#is "page, post"}}
+            // Code highlightBlock
+            var activateHighlight = function () {
+                document.querySelectorAll("pre code").forEach(
+                    function (currentValue, currentIndex, listObj) {
+                        hljs.highlightBlock(currentValue);
+                    }
+                );
+            }
+            if (window.attachEvent) {
+                window.attachEvent('onload', loadHighlight);
+            } else {
+                if (window.onload) {
+                    var originalOnload = window.onload;
+                    var newOnload = function (evt) {
+                        originalOnload(evt);
+                        activateHighlight(evt);
+                    };
+                    window.onload = newOnload;
+                } else {
+                    window.onload = activateHighlight;
+                }
+            }
+        {{/is}}
+    </script>
+
+
+    {{ghost_foot}}
+
+</body>
+
+</html>
+
+	

@@ -1,0 +1,31 @@
+{{#get "posts" limit="3" include="tags,authors" filter="id:-{{comment_id}}+tag:{{primary_tag.slug}}" as |relatedPost|}}
+{{#if posts}}
+<div class="another-post-sec">
+    <div class="text-center mb-4">
+        <h4>You may also like</h4>
+    </div>
+    <div class="">
+        <div class="ap-carousel owl-carousel carousel-dots">
+            {{#relatedPost}}
+            <div class="single-ap d-flex flex-wrap align-items-center">
+                {{#if feature_image}}
+                <a href="{{url}}" class="ap-img">
+                    <img src="{{feature_image}}" alt="{{title}}">
+                </a>
+                {{/if}}
+                <div class="flex-1">
+                    <div class="top-author-meta m-0">
+                        {{#primary_tag}}
+                        <span><a href="{{url}}">{{name}}</a></span>
+                        {{/primary_tag}}
+                        <span><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM, YYYY"}}</time></span>
+                    </div>
+                    <h6><a href="{{url}}">{{title}}</a></h6>
+                </div>
+            </div>
+            {{/relatedPost}}
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/get}}

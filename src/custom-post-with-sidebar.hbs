@@ -1,0 +1,73 @@
+{{!< default}}
+{{#is "post"}}
+{{#post}}
+<div class="single-blog-sec pb-5">
+    {{#if feature_image}}
+    <div class="sb-thumbnail pl-banner">
+        <div class="banner-before">
+            <img src="{{feature_image}}" alt="{{title}}">
+        </div>
+    </div>
+    {{/if}}
+    <div class="single-blog">
+        <div class="container">
+            <div class="d-flex flex-wrap single-blog-inner">
+                <div class="sb-left">
+                    <div class="sb-content-wrap">
+                        <div class="post-meta d-flex flex-wrap justify-content-between align-items-end">
+                            <div class="">
+                                <p>{{tags separator=", " limit="all"}}</p>
+                                <p><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM, YYYY"}}</time></p>
+                            </div>
+                            <div class="">
+                                <p>{{reading_time}}</p>
+                            </div>
+                        </div>
+                        <div class="author-meta">
+                            <i class="fa fa-user-o"></i> Posted by - {{authors separator=", "}}
+                        </div>
+                        <div class="">
+                            <h2>{{title}}</h2>
+                            <div class="single-post-content">
+                                {{content}}
+                            </div>
+                        </div>
+                        <!-- single blog footer -->
+                        <div class="sb-footer">
+                            <div class="sb-author-sec d-flex align-items-center justify-content-between flex-wrap">
+                                <div class="sb-share d-flex flex-wrap align-items-center">
+                                    <p>Share the post on:</p>
+                                    <ul class="social-icon">
+                                        {{> "share-post"}}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center flex-wrap mt-4 pt-4 border-top">
+                                <p class="mr-2 mb-0">Tags</p>
+                                <ul class="sb-tag-list">
+                                    {{#foreach tags}}
+                                    <li><a href="{{url}}">{{name}}</a></li>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
+                            {{> "author-meta"}}
+                            {{> "related-posts"}}
+                            <div class="bs-comment-sec">
+                                <h4 class="text-center mb-4">{{t "Leave a Comment"}}</h4>
+                                <div id="disqus_thread"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{> sidebar}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Tag Srction Wrapper -->
+{{/post}}
+{{/is}}
+
+
+{{!-- suscribe --}}
+{{> "partials/subscribe-section"}}

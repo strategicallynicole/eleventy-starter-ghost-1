@@ -1,0 +1,40 @@
+{{!< default}} 
+{{#tag}} 
+<!-- Author Srction Wrapper -->
+<div class="author-banner-wrapper">
+    <div class="container-fluid max-width">
+        <div class="author-banner half-bg {{#if feature_image}}banner-overlay{{/if}}" {{#if feature_image}}style="background-image: url('{{feature_image}}')"
+            {{/if}}>
+            <div class="author-banner-text">
+                <h2>{{name}}</h2>
+                <p><span>{{plural ../pagination.total empty='No Post' singular='% Post' plural='% Posts'}} written
+                        in {{name}}</span></p>
+                {{#if description}}
+                <p>{{description}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/tag}}
+<div class="container">
+    <div class="author-card-wrapper">
+        <div class="row news-grid">
+            <div class="col-lg-4 col-md-6 grid-item"></div>
+            {{#each posts}}
+            <div class="col-lg-4 col-md-6 grid-item py-4">
+                {{> "post-card"}}
+            </div>
+            {{else}}
+            <h3>Post Not found</h3>
+            {{/each}}
+        </div>
+    </div>
+    {{#if posts.length}}
+    {{pagination}}
+    {{/if}}
+</div>
+
+<!-- /Author Srction Wrapper -->
+{{!-- suscribe --}}
+{{> "partials/subscribe-section"}}

@@ -1,0 +1,33 @@
+{{#get "posts" filter="featured:true" include="tags,authors" as |feature|}}
+{{#if posts}}
+<!-- ================== Featured Post Area ======================= -->
+<div class="featured-slider-area">
+    <div class="featured-slider owl-carousel">
+        {{#feature}}
+        <!-- Single Slide -->
+        <div class="single-slide" {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
+            <div class="single-slide-content">
+                <div class="post-meta">
+                    {{#primary_tag}}
+                    <p><a href="{{url}}">{{name}}</a></p>
+                    {{/primary_tag}}
+                    <p><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM, YYYY"}}</time></p>
+                </div>
+                {{#primary_author}}
+                <div class="author-meta">
+                    <i class="fa fa-user"></i> Posted by - <a href="{{url}}">{{name}}</a>
+                </div>
+                {{/primary_author}}
+                <h2>{{title}}</h2>
+                <p>{{excerpt words="30"}}</p>
+                <div class="read-more">
+                    <a href="{{url}}">CONTINUE READING</a>
+                </div>
+            </div>
+        </div>
+        {{/feature}}
+    </div>
+</div>
+<!-- ================== /Featured Post Area ======================= -->
+{{/if}}
+{{/get}}

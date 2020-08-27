@@ -1,0 +1,27 @@
+<div class="main-menu">
+    <div class="menubar">
+        <span class="menubars">
+            <span></span>
+        </span>
+    </div>
+    <div class="mainmenu-list">
+        <ul>
+            {{#foreach navigation}}
+            <li class="{{#if current}}active{{/if}}">
+                <a href="{{url absolute=" true "}}">{{label}}</a>
+            </li>
+            {{/foreach}}
+            {{#if @member}}
+            <li><a href="/account/">Account</a></li>
+            <li><a class="btn btn-danger btn-sm rounded" href="#signout" data-members-signout>Sign out</a></li>
+            {{else}}
+            <li><a href="/signin/">Sign in</a></li>
+            <li><a class="btn btn-danger btn-sm rounded" href="/subscribe/">Subscribe</a></li>
+            {{/if}}
+        </ul>
+        <div class="close-menu d-block d-xl-none">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAABE0lEQVRIS6XVu5GDMBAGYP2KIHMJdx1cCXbIEFHBuQSXZFdABApxCdeB5zq4DCKtZ5kTg7Eea4sMofnY2YeEvu9PWuvvcRwPTdP8qYynbdtdWZaDtfaCruu+tNZXALcc3KFE9Gmt3YMDzMW3aF3XPzOcg/tQ9hb4HTyEPsGv4DHUC0vwFBqEY7gEjcI+nNe4T11LcfVDbf9QPN+mdSvydwmajNj9yBizV0oN/++HqqquqQFNRrzK6bwXAEkmNAqv0WmaOGpVFAWPfxIPwlvUHVC8LsG9cAh1eZXgT3AKleIPsBSV4AtsjPkA0BIRuFDSQz+UluU8BjAA+H0FjUU+3yA5aAgH33kAju9Eup0+lxYiOt8BXDFqtUpM3SEAAAAASUVORK5CYII="
+                alt="close">
+        </div>
+    </div>
+</div>

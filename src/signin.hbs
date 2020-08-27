@@ -1,0 +1,55 @@
+{{!< default}} 
+<!-- Single Post Wrapper -->
+<div class="single-blog-sec">
+    <div class="author-banner banner-overlay member-banner" style="background-image:url(https://images.unsplash.com/photo-1479981280584-037818c1297d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <h1>Sign in</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="sb-content-wrap blog-single-2 login-content">
+                        <div class="">
+                            <div class="single-post-content">
+                                {{#if @member.paid}}
+                                {{!-- Logged in: Redirect home --}}
+                                <script>window.location = '{{@site.url}}/';</script>
+                                {{else if @member}}
+                                {{!-- Logged in: Redirect home --}}
+                                <script>window.location = '{{@site.url}}/subscribe/';</script>
+                                {{else}}
+                                <form class="authbox" data-members-form="signin">
+                                    <h3 class="authbox-title">Welcome back!</h3>
+                                    <p>Sign into your account to get to the good stuff</p>
+                                    <div class="authbox-login">
+                                        <input data-members-email type="email" placeholder="your.email@example.com" required="true" autocomplete="false">
+                                        <button class="btn btn-danger" type="submit">
+                                            <span class="button-content">Sign in</span>
+                                            <span class="button-loader"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="authbox-extra mt-3">
+                                        <span>Don't have an account? <a href="{{@site.url}}/signup/">Sign up</a></span>
+                                    </div>
+                                    <div class="message-success">
+                                        <a class="notification-close" href="javascript:;"></a>
+                                        <strong>Great!</strong> Check your inbox and click the link to complete signin.
+                                    </div>
+                                    <div class="message-error">Please enter a valid email address!</div>
+                                </form>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Single post Wrapper -->

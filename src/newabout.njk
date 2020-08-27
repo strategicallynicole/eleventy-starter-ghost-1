@@ -1,6 +1,7 @@
 ---
 name: About
-permalink: newabout
+permalink: trueabout
+layout: base.njk
 ---
 
 
@@ -10,14 +11,16 @@ permalink: newabout
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/_includes/css/neu.css">
 
-
+ <script src="/_includes/js/core.js"></script>
+    <script src="/assets/js/main.js"></script>
 {% endblock stylesandscripts %}
 
+
 {% block footerscripts %}
-    <script src="/_includes/components/base/core.min.js"></script>
-    <script src="/_includes/components/base/script.js"></script>{% endblock footerscripts %}
+   {% endblock footerscripts %}
+
  {% block content %}
 
 		<!-- Your header goes here -->
@@ -25,7 +28,7 @@ permalink: newabout
 
 		<section class="section-about">
             <div class="shell">
-
+  
 			<div class="section__decoration section__decoration--1">
 				<img src="/assets/images/temp/ball-1@2x.png" alt="" width="173" height="218">
 			</div><!-- /.section__decoration -->

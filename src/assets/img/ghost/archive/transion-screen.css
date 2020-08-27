@@ -5304,7 +5304,7 @@ input[type="submit"].primary, input[type="reset"].primary, input[type="button"].
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: 3px solid #3eb0ef
+    border-left: 3px solid #6c5ba7
 }
 
 @media (max-width:500px) {
@@ -5599,7 +5599,7 @@ input[type="submit"].primary, input[type="reset"].primary, input[type="button"].
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: proxima-nova, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 1.6rem;

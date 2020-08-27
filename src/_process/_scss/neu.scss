@@ -1,7 +1,6 @@
 /* ------------------------------------------------------------ *\
   Vendor
 \* ------------------------------------------------------------ */
-
 //@import '~vendor-name/vendor.scss/css';
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
@@ -97,3 +96,60 @@
 //@import 'overwrites/';
 
 
+
+@import 'components/accordion/accordion.scss';
+@import 'components/animate/animate.scss';
+@import 'components/base/base.scss';
+@import 'components/block/block.scss';
+@import 'components/blurb/blurb.scss';
+@import 'components/box/box.scss';
+@import 'components/button/button.scss';
+@import 'components/countdown/countdown.scss';
+@import 'components/counter/counter.scss';
+@import 'components/divider/divider.scss';
+@import 'components/font-awesome/font-awesome.scss';
+@import 'components/form/form.scss';
+@import 'components/form-output/form-output.scss';
+@import 'components/fullpage/fullpage.scss';
+@import 'components/grid/grid.scss';
+@import 'components/icon/icon.scss';
+@import 'components/image-hover/image-hover.scss';
+@import 'components/image-svg/image-svg.scss';
+@import 'components/lightgallery/lightgallery.scss';
+@import 'components/list/list.scss';
+@import 'components/mdi/mdi.scss';
+@import 'components/media/media.scss';
+@import 'components/modal/modal.scss';
+@import 'components/multiswitch/multiswitch.scss';
+@import 'components/nav/nav.scss';
+@import 'components/owl-carousel/owl.carousel.scss';
+@import 'components/partner/partner.scss';
+@import 'components/post/post.scss';
+@import 'components/preloader/preloader.scss';
+@import 'components/pricing/pricing.scss';
+@import 'components/quote/quote.scss';
+@import 'components/rd-mailform/rd-mailform.scss';
+@import 'components/rd-navbar/rd-navbar.scss';
+@import 'components/regula/regula.scss';
+@import 'components/rights/rights.scss';
+@import 'components/slick/slick.scss';
+@import 'components/snackbar/snackbar.scss';
+
+@import 'components/swiper/swiper.scss';
+@import 'components/table/table.scss';
+@import 'components/team/team.scss';
+@import 'components/to-top/to-top.scss';
+@import 'components/tooltip/tooltip.scss';
+@import 'components/video/video.scss';
+@import "style.scss";
+@import '_sidebar/_animation.scss';
+@import '_sidebar/_mixin.scss';
+@import '_sidebar/_sidebar-brand.scss';
+@import '_sidebar/_sidebar-footer.scss';
+@import '_sidebar/_sidebar-header.scss';
+@import '_sidebar/_sidebar-menu.scss';
+@import '_sidebar/_sidebar-search.scss';
+@import '_sidebar/_sidebar-wrapper.scss';
+@import '_sidebar/_variables.scss';
+@import '_sidebar/main.scss';
+@import '_sidebar/sidebar-themes.scss';

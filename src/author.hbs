@@ -1,0 +1,43 @@
+{{!< default}} 
+<!-- Author Srction Wrapper -->
+<div class="author-banner-wrapper">
+    <div class="container-fluid max-width">
+        <div class="author-banner {{#if cover_image}}banner-overlay{{/if}}" {{#if cover_image}}style="background-image: url('{{cover_image}}')"{{/if}}>
+            <div class="author-banner-text">
+                {{#if profile_image}}
+                <div class="author-single-image" data-aos="fade-down">
+                    <img src="{{profile_image}}" alt="{{name}}">
+                </div>
+                {{/if}}
+                <h2 data-aos="fade-down">{{name}}</h2>
+                {{#if bio}}
+                <p data-aos="fade-up">{{bio}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="author-card-wrapper">
+        <div class="row news-grid">
+            <div class="col-lg-4 col-md-6 grid-item"></div>
+            {{#each posts}}
+            <div class="col-lg-4 col-md-6 grid-item py-4">
+                {{> "partials/post-card"}}
+            </div>
+            {{else}}
+            <h3>Post Not found</h3>
+  {{/each}}
+        </div>
+    </div>
+    {{#if posts.length}}
+        {{pagination}}
+    {{/if}}
+</div>
+
+<!-- /Author Srction Wrapper -->
+
+
+
+{{!-- suscribe --}}
+{{> "partials/subscribe-section"}}

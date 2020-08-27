@@ -1,0 +1,38 @@
+{{!< default}} 
+<!-- Single Post Wrapper -->
+<div class="single-blog-sec">
+    <div class="Membership-plan-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="membership-plan">
+                        <div class="full-membership-content text-center">
+                            {{#if @member.paid}}
+                            {{!-- Paid member: Show the following information of the subscriber --}}
+                            <div class="account-box">
+                                <h2 class="account-box-title">Nice, you're a subscriber!</h2>
+                                <p>Hey! <strong>{{@member.email}}</strong> has an active {{@site.title}} account with access to all areas. You're all set, but if you need any help, get in touch with us and we'd be happy to help.</p>
+                                {{#foreach @member.subscriptions}}
+                                <ul class="payer-information">
+                                    <li><strong>Plan: </strong>{{plan.nickname}} adopted</li>
+                                    <li><strong>Card: </strong>**** **** **** {{default_payment_card_last4}}</li>
+                                    <li><strong>Renew: </strong>{{date current_period_end format="DD MMMM YYYY"}}</li>
+                                    <li><strong>Status: </strong>{{status}}</li>
+                                </ul>
+                                {{/foreach}}
+                            </div>
+                            {{else}}
+                            <h2 class="account-box-title">Currently, you're a free subscriber!</h2>
+                                <p>Hey! <strong>{{@member.email}}</strong> has an active {{@site.title}} account with access to all free posts. If you want to get access all of our posts, please choose a plan and subscribe us. If you need any help, get in touch with us and we'd be happy to help.</p>
+                                <div class="subscribe-btn mt-4">
+                                    <a href="{{@site.url}}/subscribe/" class="btn btn-danger">Subscribe</a>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Single post Wrapper -->

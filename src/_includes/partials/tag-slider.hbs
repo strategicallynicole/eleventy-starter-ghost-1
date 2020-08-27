@@ -1,0 +1,23 @@
+{{#get "tags" limit='all' include="count.posts"}}
+{{#if tags}}
+<!-- tag section -->
+
+       <div class="tag-text text-center gimmesomeroom">Topics<br /><img src="{{asset "img/rule.png"}}" width="200" /></div>
+
+
+<div class="footer-tag owl-carousel owl-theme">
+    {{#foreach tags}}
+    <a href="{{url}}">
+        <div class="single-tag neumorphic" {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
+            <div class="tag-name">
+                <h6>{{name}}</h6>
+                <p>{{plural count.posts empty=(t "No Post") singular=(t "% Posts") plural=(t "% Posts")}}</p>
+            </div>
+        </div>
+    </a>
+    {{/foreach}}
+</div>
+<!-- /tag section -->
+
+{{/if}}
+{{/get}}

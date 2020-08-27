@@ -1,0 +1,84 @@
+<!-- Sidebar start -->
+<div class="sb-right blog-sidebar py-5">
+    <aside data-aos="fade-up">
+        <h5 class="text-center">
+            <span class="sidebar-title">About Author</span>
+        </h5>
+        {{#primary_author}}
+        <div class="about-us text-center">
+            {{#if profile_image}}
+            <a href="{{url}}" class="a-img"><img src="{{profile_image}}" alt="{{name}}"></a>
+            {{/if}}
+            <a href="{{url}}" class="a-name">{{name}}</a>
+            {{#if location}}
+            <div class="top-author-meta">
+                <span>{{location}}</span>
+            </div>
+            {{/if}}
+            <ul class="social-icon pb-3">
+                {{#if facebook}}
+                <li><a href="{{facebook_url}}"><i class="fa fa-facebook"></i></a></li>
+                {{/if}}
+                {{#if twitter}}
+                <li><a href="{{twitter_url}}"><i class="fa fa-twitter"></i></a></li>
+                {{/if}}
+                {{#if website}}
+                <li><a href="{{website}}"><i class="fa fa-globe"></i></a></li>
+                {{/if}}
+            </ul>
+            {{#if bio}}
+            <p class="a-desc">{{bio}}</p>
+            {{/if}}
+        </div>
+        {{/primary_author}}
+    </aside>
+    {{#get "posts" filter="tag:popular" limit="3" as |popular|}}
+    {{#if posts}}
+    <aside data-aos="fade-up">
+        <h5 class="text-center">
+            <span class="sidebar-title">Popular Post</span>
+        </h5>
+        <div class="popular-post">
+            {{#popular}}
+            <div class="d-flex pp-item">
+                {{#if feature_image}}<a href="{{url}}" class="pp-thumb" style="background: url('{{feature_image}}') no-repeat scroll center/cover"></a>{{/if}}
+                <div class="">
+                    <h6 class="mb-2"><a class="pp-title" href="{{url}}">{{title}}</a></h6>
+                    <time class="pp-date"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM, YYYY"}}</time</time>
+                </div>
+            </div>
+            {{/popular}}
+        </div>
+    </aside>
+    {{/if}}
+    {{/get}}
+    {{#get "tags" limit="all" include="count.posts" as |tagitem|}}
+    {{#if tags}}
+    <aside data-aos="fade-up">
+        <h5 class="text-center">
+            <span class="sidebar-title">Tag Clouds</span>
+        </h5>
+        <ul class="categories">
+            {{#tagitem}}
+            <li><a href="{{url}}">{{name}} <span>{{plural count.posts empty=(t "0") singular=(t "%") plural=(t "%")}}</span></a></li>
+            {{/tagitem}}
+        </ul>
+    </aside>
+    {{/if}}
+    {{/get}}
+    {{#if @labs.subscribers}}
+    <aside data-aos="fade-up">
+        <h5 class="text-center">
+            <span class="sidebar-title">Newsletter</span>
+        </h5>
+        <div class="subscribe-block text-center">
+            <div class="sc-form-wrap mt-4">
+                <div class="sc-form">
+                    {{subscribe_form placeholder="Email"}}
+                </div>
+            </div>
+        </div>
+    </aside>
+    {{/if}}
+</div>
+<!-- Sidebar End -->

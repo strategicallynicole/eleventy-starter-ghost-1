@@ -1,0 +1,34 @@
+{{!< default}} 
+{{#post}} 
+<!-- Single Post Wrapper -->
+<div class="single-blog-sec">
+    <div class="author-banner {{#if feature_image}}banner-overlay{{else}}banner-split{{/if}}" {{#if feature_image}}
+        style="background-image:url({{feature_image}})" {{/if}}>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <h1>Thank you!</h1>
+              <iframe src="https://app.prospect.io/companies/d7e51de5-d5cd-40cd-a483-a0f05a479f28/tracker" width="0" height="0" style="display:none;"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="sb-content-wrap blog-single-2">
+                        <div class="single-post-content">
+                            {{content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<iframe src="https://app.prospect.io/companies/d7e51de5-d5cd-40cd-a483-a0f05a479f28/tracker" width="0" height="0" style="display:none;"></iframe>
+
+<!-- /Single post Wrapper -->
+{{/post}}

@@ -6,20 +6,49 @@ const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
-
+const Handlebars = require("handlebars");
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
+const url = "http://localhost:8080";
+var helpers = require('handlebars-helpers')();
 
 const sass = require('./config/sass-process');
-
+Handlebars.registerHelper("asset", function(options) {
+  return new Handlebars.SafeString(url + "assets" + options.this);
+});
 module.exports = config => {
+  const outputDir = 'dist';
+  const assetDir = 'assets';
+ 
+  eleventyConfig.addFilter('assetPath', function(value) {
+    if (process.env.ELEVENTY_ENV === 'production') {
+      const manifestPath = path.resolve(
+        __dirname,
+        outputDir,
+        assetDir,
+        'manifest.json'
+      );
+      const manifest = JSON.parse(fs.readFileSync(manifestPath));
+      return `/${assetDir}/${manifest[value]}`;
+    }
+    return `/${assetDir}/${value}`;
+  });
+ 
+
+  return {
+    dir: { input: 'src', output: outputDir }
+  };
+};
     //Watching for modificaions in style directory
-    sass('./src/_process/_scss/_neu/neu.scss', './src/_includes/css/neu.css');
-}
+    sass('./src/_process/_scss/neu.scss', './src/assets/css/neu.css');
+
+
 module.exports = function(eleventyConfig) {
   // Output directory: _site
 
   // Copy `img/` to `_site/img`
-  eleventyConfig.addPassthroughCopy("assets");
+  config.addPassthroughCopy({ "src/assets": "/" });
+  config.addPassthroughCopy({ "src/_includes/js": "/" });
+    config.addPassthroughCopy({ "src/static": "/" });
   
   // Copy `css/fonts/` to `_site/css/fonts`
   // If you use a subdirectory, it’ll copy using the same directory structure.
@@ -216,11 +245,12 @@ module.exports = function(config) {
       input: "src",
       output: "dist",
       includes: "_includes",
-      layouts: "layouts"
+      layouts: "layouts",
+      partials: "_includes/partials"
     },
 
     // Files read by Eleventy, add as needed
-    templateFormats: ["css", "njk", "md", "txt"],
+    templateFormats: ["css", "njk", "md", "txt", "hbs"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true

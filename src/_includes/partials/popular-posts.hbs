@@ -1,0 +1,22 @@
+{{#get "posts" filter="tag:popular" visibility="all" include="tags,authors" as |popular|}}
+{{#if posts}}
+<!-- ================== /Latest News Area ======================= -->
+<div class="latest-news-sec">
+    <div class="container">
+        <div class="section-title text-right mb-4">
+            <h4>Popular News</h4>
+        </div>
+        <div class="latest-news">
+            <div class="">
+                <div class="owl-carousel ln-carousel">
+                    {{#popular}}
+                        {{> "post-card"}}
+                    {{/popular}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================== /Latest News Area ======================= -->
+{{/if}}
+{{/get}}

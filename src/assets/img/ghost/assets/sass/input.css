@@ -3155,7 +3155,7 @@ section.posts .col-md-4:last-child {
 }
 
 .post-content p, .post-full-content li {
-  color: #140a23;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 500px) {

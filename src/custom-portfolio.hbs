@@ -1,0 +1,51 @@
+{{!< default}}
+{{#is "page"}}
+{{#post}}
+<!-- Tag Srction Wrapper -->
+<div class="tag-banner-wrapper">
+    <div class="container-fluid max-width py-0">
+        <div class="tag-banner {{^if feature_image}}half-bg{{else}}banner-overlay{{/if}}" {{#if feature_image}}style="background-image: url('{{feature_image}}');"{{/if}}>
+            <div class="tag-banner-text">
+                <h2 data-aos="fade-down"><i class="fa fa-tags"></i>{{title}}</h2>
+                {{#if excerpt}}
+                    <p data-aos="fade-up">{{excerpt}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{#get "posts" filter="tag:portfolio" include="tags,authors" as |portfolio|}}
+{{#if posts}}
+<div class="p-bot-16 pt-5">
+    <div class="container">
+        <div class="row news-grid">
+            <div class="col-lg-4 col-md-6 grid-item"></div>
+            {{#portfolio}}
+            <div class="col-lg-4 col-md-6 grid-item py-3" data-aos="fade-up">
+                <div class="portfolio-card">
+                    {{#if feature_image}}
+                    <a href="{{url}}" class="card-img"><img src="{{feature_image}}" alt="{{title}}"></a>
+                    {{/if}}
+                    <div class="card-content">
+                        <div class="top-author-meta">
+                            <span>{{tags separator=", " limit="2"}}</span>
+                            <span>/</span>
+                            <span><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM, YYYY"}}</time></span>
+                        </div>
+                        <h6><a href="{{url}}" class="card-title">{{title}}</a></h6>
+                    </div>
+                </div>
+            </div>
+            {{/portfolio}}
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/get}}
+<!-- /Tag Srction Wrapper -->
+{{/post}}
+{{/is}}
+
+
+{{!-- suscribe --}}
+{{> "partials/subscribe-section"}}

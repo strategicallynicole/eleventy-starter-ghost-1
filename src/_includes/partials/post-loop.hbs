@@ -1,0 +1,34 @@
+<!-- ================== All News Area ======================= -->
+<div class="all-news-sec section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h4>All News</h4>
+        </div>
+        <div class="all-news">
+            <div class="row news-grid">
+                <div class="col-md-6 grid-item"></div>
+                {{#each posts visibility="all"}}
+                    {{#is "home"}}
+                        {{#has number="1"}}
+                        {{> "post-card-full"}}
+                        {{/has}}
+                        {{^has number="1"}}
+                        <div class="col-md-6 grid-item py-4">
+                            {{> "partials/post-card"}}
+                        </div>
+                        {{/has}}
+                    {{/is}}
+                    {{^is "home"}}
+                    <div class="col-md-6 grid-item py-4">
+                        {{> "partials/post-card"}}
+                    </div>
+                    {{/is}}
+                {{/each}}
+            </div>
+        </div>
+        {{#if posts.length}}
+        {{pagination}}
+        {{/if}}
+    </div>
+</div>
+<!-- ================== /All News Area ======================= -->

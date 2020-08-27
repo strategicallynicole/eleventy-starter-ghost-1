@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    {{!-- Base Meta --}}
+    <title>{{meta_title}} | {{@site.description}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- Styles'n'Scripts --}}
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/components/component.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/neus.css"}}" />
+{{> "partials/vendor/vendors"}}
+
+
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+    <picture>
+  <source srcset="{{asset "/images/brand/accents/swirl-smaller.webp"}}" type="image/webp">
+  <img width="3000"  class="swirlone" src="{{asset "/images/brand/accents/swirl-smaller-red.png"}}" alt="OAKwave marketing strategy">
+</picture>	
+
+    <div class="relative">
+    {{> "partials/bar"}}
+
+    {{> "partials/header"}}
+    {{{body}}}
+    {{> "partials/notifications"}}
+    {{> "partials/footer"}}
+    </div>
+    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
+    <!--++++++++ Start footer script section ++++++++-->
+    <!-- jQuery JS -->
+    <script src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset 'vendor/jquery-ui.min.js'}}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{{asset "/js/bootstrap.min.js"}}"></script>
+    <!-- Plugins JS -->
+    <script src="{{asset "/js/plugins.js"}}"></script>
+    <!-- Custom Script JS -->
+    <script src="{{asset "/js/scripts.js"}}"></script>
+    <script src="{{asset 'js/bundle.js'}}"></script>
+
+
+    <script>
+        const homeUrl = '{{ @site.url }}';
+    </script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+        var stripe = getParameterByName('stripe');
+        if (action == 'subscribe') {
+            $('body').addClass("subscribe-success");
+        }
+        if (action == 'signup') {
+            window.location = '{{@site.url}}/signup/?action=checkout';
+        }
+        if (action == 'checkout') {
+            $('body').addClass("signup-success");
+        }
+        if (action == 'signin') {
+            $('body').addClass("signin-success");
+        }
+        if (stripe == 'success') {
+            $('body').addClass("checkout-success");
+        }
+        $('.notification-close').click(function () {
+            $(this).parent().addClass('closed');
+            var uri = window.location.toString();
+            if (uri.indexOf("?") > 0) {
+                var clean_uri = uri.substring(0, uri.indexOf("?"));
+                window.history.replaceState({}, document.title, clean_uri);
+            }
+        });
+        // Reset form on opening subscrion overlay
+        $('.subscribe-button').click(function() {
+            $('.subscribe-overlay form').removeClass();
+            $('.subscribe-email').val('');
+        });
+
+        {{#is "post"}}
+            var disqus_config = function () {
+                this.page.url = "{{url absolute="true"}}";
+                this.page.identifier = "ghost-{{comment_id}}";
+            };
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://oakwavedisqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        {{/is}}
+        {{#is "page, post"}}
+            // Code highlightBlock
+            var activateHighlight = function () {
+                document.querySelectorAll("pre code").forEach(
+                    function (currentValue, currentIndex, listObj) {
+                        hljs.highlightBlock(currentValue);
+                    }
+                );
+            }
+            if (window.attachEvent) {
+                window.attachEvent('onload', loadHighlight);
+            } else {
+                if (window.onload) {
+                    var originalOnload = window.onload;
+                    var newOnload = function (evt) {
+                        originalOnload(evt);
+                        activateHighlight(evt);
+                    };
+                    window.onload = newOnload;
+                } else {
+                    window.onload = activateHighlight;
+                }
+            }
+        {{/is}}
+    </script>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<div class="neucardcontainer {{^if feature_image}}no-feature-image{{/if}}" data-aos="fade-up">
+    {{#if feature_image}}
+    <a href="{{url}}" ><img class="neucardimage" src="{{feature_image}}" alt="{{title}}"></a>
+ {{/if}}
+    <div class="neucardcontent card-content">
+        <div class="post-meta">
+            {{#primary_tag}}
+            <p><a href="{{url}}">{{name}}</a></p>
+            {{/primary_tag}}
+            <p><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></p>
+        </div>
+
+        <h4><a href="{{url}}" class="card-title">{{title}}</a></h4>
+        <p>{{excerpt}}</p>
+        <div class="neubtn small-btn alt"><a href="{{url}}">Read More</a></div>
+        <!--<div class="social-share-post">
+            <div class="neumorphic strokeyhover share-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <ul class="share-post">
+                {{> "share-post"}}
+            </ul></div>-->
+
+        </div>
+    </div>
